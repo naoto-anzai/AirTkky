@@ -6,9 +6,9 @@ PhysicMaterial:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: hokkey
-  dynamicFriction: 0.05
-  staticFriction: 0.05
-  bounciness: 1
-  frictionCombine: 3
-  bounceCombine: 3
+  m_Name: dai_yuka_ph
+  dynamicFriction: 0
+  staticFriction: 0
+  bounciness: 0
+  frictionCombine: 0
+  bounceCombine: 1
