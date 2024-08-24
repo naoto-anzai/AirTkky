@@ -1,0 +1,12 @@
+{
+    "introduction": [
+        {
+            "characterName": "Matsu",
+            "dialogue": "Hello World!"
+        },
+        {
+            "characterName": "Matsu",
+            "dialogue": "Farewell, World!"
+        }
+    ]
+}
