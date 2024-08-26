@@ -3,30 +3,43 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using System;
+using UnityEngine.UI;
 
 public class IntroDialogueManager : MonoBehaviour
 {
     [System.Serializable]
+    public class Choice
+    {
+        public string text;
+        public int nextDialogueId;
+    }
+
+    [System.Serializable]
     public class Dialogue
     {
+        public int id;
         public string characterName;
         public string dialogue;
+        public List<Choice> choices;
+        public int nextDialogueId;
     }
 
     [System.Serializable]
     public class DialogueList
     {
-        public List<Dialogue> introduction;
+        public List<Dialogue> scenario;
     }
     
     [SerializeField] GameObject CharactorNameGameObject;
     [SerializeField] GameObject dialogueGameObject;
+    [SerializeField] GameObject choiceBox;
+    [SerializeField] GameObject choiceButton;
 
     TextMeshProUGUI charactorNameText;
     TextMeshProUGUI dialogueText;
-    DialogueList dialogueList;
-    int dialogueLengths;
-    int dialogueCounter = -1;
+    List<Dialogue> scenario;
+    int dialogueIdNow = 1;
+    bool waitingForChoice = false;
 
     void LoadDialogue()
     {
@@ -34,27 +47,60 @@ public class IntroDialogueManager : MonoBehaviour
         dialogueText = dialogueGameObject.GetComponentInChildren<TextMeshProUGUI>();
 
         TextAsset jsonText = Resources.Load<TextAsset>("Dialogue/intro");
-        dialogueList = JsonUtility.FromJson<DialogueList>(jsonText.text);
+        DialogueList dialogueList = JsonUtility.FromJson<DialogueList>(jsonText.text);
+        scenario = dialogueList.scenario;
+    }
 
-        dialogueLengths = dialogueList.introduction.Count;
+    void ShowChoices(Dialogue dialogue)
+    {
+        if (waitingForChoice) return;
+        waitingForChoice = true;
+        for(int i = 0; i < dialogue.choices.Count; i++)
+        {
+            int index = i;
+            GameObject tmpChoice = Instantiate(choiceButton, choiceBox.transform);
+            tmpChoice.GetComponentInChildren<TextMeshProUGUI>().text = dialogue.choices[index].text;
+            tmpChoice.GetComponent<Button>().onClick.AddListener(() => {
+                dialogueIdNow = dialogue.choices[index].nextDialogueId;
+                choiceBox.SetActive(false);
+                waitingForChoice = false;
+                ShowNextDialogue();
+            });
+        }
+        choiceBox.SetActive(true);
     }
 
     void ShowNextDialogue()
     {
-        if (dialogueCounter + 1 == dialogueLengths)
+        Dialogue dialogueNow = scenario.Find(d => d.id == dialogueIdNow);
+
+        if (dialogueNow == null)
         {
             Debug.Log("End of scenario.");
             return;
         }
-        dialogueCounter++;
 
-        charactorNameText.text = dialogueList.introduction[dialogueCounter].characterName;
-        dialogueText.text = dialogueList.introduction[dialogueCounter].dialogue;
+        charactorNameText.text = dialogueNow.characterName;
+        dialogueText.text = dialogueNow.dialogue;
+
+        if(dialogueNow.choices.Count != 0)
+        {
+            ShowChoices(dialogueNow);
+        }
+        else if(dialogueNow.nextDialogueId != 0)
+        {
+            dialogueIdNow = dialogueNow.nextDialogueId;
+        }
+        else
+        {
+            dialogueIdNow++;
+        }
     }
 
     // Start is called before the first frame update
     void Start()
     {
+        choiceBox.SetActive(false);
         LoadDialogue();
         ShowNextDialogue();
     }
