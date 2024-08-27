@@ -19,7 +19,7 @@ public class IntroDialogueManager : MonoBehaviour
     {
         public int id;
         public string characterName;
-        public string dialogue;
+        public string dialogue = "";
         public List<Choice> choices;
         public int nextDialogueId;
     }
@@ -34,14 +34,17 @@ public class IntroDialogueManager : MonoBehaviour
     [SerializeField] GameObject dialogueGameObject;
     [SerializeField] GameObject choiceBox;
     [SerializeField] GameObject choiceButton;
+    [SerializeField] float typeSpeed = 0.2f;
 
     TextMeshProUGUI charactorNameText;
     TextMeshProUGUI dialogueText;
     List<Dialogue> scenario;
-    int dialogueIdNow = 1;
+    int dialogueIdNow = 0;
+    int dialogueIdNext = 1;
+    int dialogueCharNow = 0;
     bool waitingForChoice = false;
 
-    void LoadDialogue()
+    void LoadAllDialogues()
     {
         charactorNameText = CharactorNameGameObject.GetComponentInChildren<TextMeshProUGUI>();
         dialogueText = dialogueGameObject.GetComponentInChildren<TextMeshProUGUI>();
@@ -49,11 +52,11 @@ public class IntroDialogueManager : MonoBehaviour
         TextAsset jsonText = Resources.Load<TextAsset>("Dialogue/intro");
         DialogueList dialogueList = JsonUtility.FromJson<DialogueList>(jsonText.text);
         scenario = dialogueList.scenario;
+        scenario.Add(new Dialogue());
     }
 
     void ShowChoices(Dialogue dialogue)
     {
-        if (waitingForChoice) return;
         waitingForChoice = true;
         for(int i = 0; i < dialogue.choices.Count; i++)
         {
@@ -61,39 +64,62 @@ public class IntroDialogueManager : MonoBehaviour
             GameObject tmpChoice = Instantiate(choiceButton, choiceBox.transform);
             tmpChoice.GetComponentInChildren<TextMeshProUGUI>().text = dialogue.choices[index].text;
             tmpChoice.GetComponent<Button>().onClick.AddListener(() => {
-                dialogueIdNow = dialogue.choices[index].nextDialogueId;
+                dialogueIdNext = dialogue.choices[index].nextDialogueId;
                 choiceBox.SetActive(false);
                 waitingForChoice = false;
-                ShowNextDialogue();
+                UpdateDialogue();
             });
         }
         choiceBox.SetActive(true);
     }
 
-    void ShowNextDialogue()
+    IEnumerator ShowDialogue(string text)
     {
+        for(; dialogueCharNow <= text.Length; dialogueCharNow++)
+        {
+            dialogueText.text = text.Substring(0, dialogueCharNow);
+            yield return new WaitForSeconds(typeSpeed);
+        }
+        UpdateDialogue(false);
+    }
+
+    void UpdateDialogue(bool getNext = true)
+    {
+        if (waitingForChoice) return;
         Dialogue dialogueNow = scenario.Find(d => d.id == dialogueIdNow);
+        Dialogue dialogueNext = scenario.Find(d => d.id == dialogueIdNext);
 
-        if (dialogueNow == null)
+ 
+        if (dialogueNow.dialogue.Length <= dialogueCharNow && getNext)
         {
-            Debug.Log("End of scenario.");
-            return;
-        }
+            if (dialogueNext == null)
+            {
+                Debug.Log("End of scenario.");
+                return;
+            }
+            charactorNameText.text = dialogueNext.characterName;
+            dialogueCharNow = 1;
+            dialogueIdNow = dialogueIdNext;
 
-        charactorNameText.text = dialogueNow.characterName;
-        dialogueText.text = dialogueNow.dialogue;
+            if(dialogueNext.nextDialogueId != 0)
+            {
+                dialogueIdNext = dialogueNext.nextDialogueId;
+            }
+            else
+            {
+                dialogueIdNext++;
+            }
 
-        if(dialogueNow.choices.Count != 0)
-        {
-            ShowChoices(dialogueNow);
-        }
-        else if(dialogueNow.nextDialogueId != 0)
-        {
-            dialogueIdNow = dialogueNow.nextDialogueId;
+            StartCoroutine(ShowDialogue(dialogueNext.dialogue));
         }
         else
         {
-            dialogueIdNow++;
+            dialogueCharNow = dialogueNow.dialogue.Length;
+            dialogueText.text = dialogueNow.dialogue;
+            if(dialogueNow.choices.Count != 0)
+            {
+                ShowChoices(dialogueNow);
+            }
         }
     }
 
@@ -101,16 +127,16 @@ public class IntroDialogueManager : MonoBehaviour
     void Start()
     {
         choiceBox.SetActive(false);
-        LoadDialogue();
-        ShowNextDialogue();
+        LoadAllDialogues();
+        UpdateDialogue();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.anyKeyDown)
+        if (Input.GetMouseButtonDown(0))
         {
-            ShowNextDialogue();
+            UpdateDialogue();
         }
     }
 }
