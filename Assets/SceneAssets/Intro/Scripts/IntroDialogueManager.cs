@@ -2,8 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using System;
 using UnityEngine.UI;
+using DG.Tweening;
 
 public class IntroDialogueManager : MonoBehaviour
 {
@@ -34,11 +34,15 @@ public class IntroDialogueManager : MonoBehaviour
     [SerializeField] GameObject dialogueGameObject;
     [SerializeField] GameObject choiceBox;
     [SerializeField] GameObject choiceButton;
-    [SerializeField] float typeSpeed = 0.2f;
+    [SerializeField] GameObject nextTriangle;
+    [SerializeField] float typeSpeed = 0.1f;
+    [SerializeField] float nextTriangleSpeed;
+    [SerializeField] float nextTriangleTravelDistance;
 
     TextMeshProUGUI charactorNameText;
     TextMeshProUGUI dialogueText;
     List<Dialogue> scenario;
+    Vector3 initialTrianglePositoion;
     int dialogueIdNow = 0;
     int dialogueIdNext = 1;
     int dialogueCharNow = 0;
@@ -97,6 +101,8 @@ public class IntroDialogueManager : MonoBehaviour
                 Debug.Log("End of scenario.");
                 return;
             }
+            nextTriangle.transform.DOKill();
+
             charactorNameText.text = dialogueNext.characterName;
             dialogueCharNow = 1;
             dialogueIdNow = dialogueIdNext;
@@ -120,6 +126,13 @@ public class IntroDialogueManager : MonoBehaviour
             {
                 ShowChoices(dialogueNow);
             }
+            nextTriangle.transform.position = initialTrianglePositoion;
+            nextTriangle.transform.DOMove(
+                nextTriangle.transform.position - new Vector3(0f, nextTriangleTravelDistance, 0f), 
+                nextTriangleSpeed )
+                .SetLoops(-1, LoopType.Yoyo)
+                .OnStart(() => { nextTriangle.SetActive(true); })
+                .OnKill(() => { nextTriangle.SetActive(false); });
         }
     }
 
@@ -129,6 +142,7 @@ public class IntroDialogueManager : MonoBehaviour
         choiceBox.SetActive(false);
         LoadAllDialogues();
         UpdateDialogue();
+        initialTrianglePositoion = nextTriangle.transform.position;
     }
 
     // Update is called once per frame
