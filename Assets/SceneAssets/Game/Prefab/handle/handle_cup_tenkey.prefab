@@ -223,7 +223,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8057238551562451322}
   - component: {fileID: 3746988935150692409}
-  - component: {fileID: 6409659902093548748}
+  - component: {fileID: 2368143692536157662}
   m_Layer: 0
   m_Name: handle_cup_tenkey
   m_TagString: Untagged
@@ -275,7 +275,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 2
---- !u!114 &6409659902093548748
+--- !u!114 &2368143692536157662
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -284,10 +284,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 7046517336311867585}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e5a9312bbfd6ddf4db7c1ed969320f05, type: 3}
+  m_Script: {fileID: 11500000, guid: 2bbfd26d8c72be0428fe7bb8096ec9ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myForce: 1000
-  maxSpeed: 5
-  speedDecrease: 0.1
-  minSpeed: 1
+  myForce: 10000
+  maxSpeed: 7
+  speedDecrease: 0.001
+  minSpeed: 0.1

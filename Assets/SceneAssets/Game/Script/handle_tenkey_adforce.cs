@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 
-public class test_tenkey_adforce : MonoBehaviour
+public class handle_tenkey_adforce : MonoBehaviour
 {
     // Start is called before the first frame update
     Rigidbody myRigidbody;
@@ -54,13 +55,13 @@ public class test_tenkey_adforce : MonoBehaviour
         // Å‘å‘¬“x‚Ì§ŒÀ
         if (myRigidbody.velocity.magnitude > maxSpeed)
         {
-            myRigidbody.velocity = myRigidbody.velocity.normalized * maxSpeed;
+            myRigidbody.velocity = myRigidbody.velocity.normalized * maxSpeed ;
         }
         if (!isKeypressed)
         {
-            myRigidbody.velocity = myRigidbody.velocity.normalized * speedDecrease;
+            myRigidbody.velocity = myRigidbody.velocity.normalized * speedDecrease * Time.deltaTime;
 
-            if(myRigidbody.velocity.magnitude < minSpeed)
+            if (myRigidbody.velocity.magnitude < minSpeed)
             {
                 myRigidbody.velocity = myRigidbody.velocity.normalized * 0f;
             }
