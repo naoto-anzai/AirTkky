@@ -9,6 +9,6 @@ PhysicMaterial:
   m_Name: dai_yuka_ph
   dynamicFriction: 0
   staticFriction: 0
-  bounciness: 0
-  frictionCombine: 0
+  bounciness: 0.01
+  frictionCombine: 1
   bounceCombine: 1
