@@ -1,7 +1,6 @@
 using System.Collections.Specialized;
 using UnityEngine;
 using GameStates;
-using PackGameManager;
 
 namespace PackScoreManager
 {
@@ -10,12 +9,15 @@ namespace PackScoreManager
         public int score_player = 0; // 現在の自身の得点を保持する変数
         public int score_enemy = 0;  // 現在の相手の得点を保持する変数
 
-        pack_game_manager MyGameManager;
+        pack_game_manager PackGameManager;
+        handle_game_manager HandleGameManager;
+
 
         // ゲーム開始時に呼ばれるメソッド
         void Start()
         {
-            MyGameManager = FindObjectOfType<pack_game_manager>();
+            PackGameManager = FindObjectOfType<pack_game_manager>();
+            HandleGameManager = FindObjectOfType<handle_game_manager>();
         }
 
         // 壁に当たった時に呼ばれるメソッド
@@ -26,7 +28,8 @@ namespace PackScoreManager
                 score_player += 1; // 得点を加算
                 Debug.Log("Score: " + score_player); // 得点を表示
                                                      // 必要に応じて得点をUIに反映させる処理を追加
-                MyGameManager.StartRalley(players.enemy);
+                PackGameManager.StartRalley(players.player);
+                HandleGameManager.StartRalley();
                 
             }
             else if (Wall.CompareTag("WallEnemy")) // "WallEnemy" タグを持つオブジェクトと衝突した時
@@ -35,7 +38,7 @@ namespace PackScoreManager
                 Debug.Log("Score: " + score_enemy); // 得点を表示
                                                     // 必要に応じて得点をUIに反映させる処理を追加
 
-                MyGameManager.StartRalley(players.player);
+                PackGameManager.StartRalley(players.enemy);
             }
         }
     }

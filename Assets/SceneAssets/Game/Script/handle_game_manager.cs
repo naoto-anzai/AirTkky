@@ -1,14 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using GameStates;
-using System.Collections.Specialized;
-using System.Security.Cryptography;
 
-
-public class pack_game_manager : MonoBehaviour
+public class handle_game_manager : MonoBehaviour
 {
-    public float offset = 1f;
     public Vector3 InitializedPos;
     Rigidbody myRigidbody;
 
@@ -18,15 +13,15 @@ public class pack_game_manager : MonoBehaviour
         InitializedPos = transform.position;
         myRigidbody = GetComponent<Rigidbody>();
     }
-    //得点後にパックの位置を初期化
-    public void StartRalley(players turn)
+    //得点後にハンドルの位置を初期化
+    public void StartRalley()
     {
-        transform.position = InitializedPos - new Vector3(0, 0,(float)turn * offset);
+        transform.position = InitializedPos;
         myRigidbody.velocity = myRigidbody.velocity.normalized * 0f;
     }
     // Update is called once per frame
     void Update()
-    {  
-   
+    {
+
     }
 }
