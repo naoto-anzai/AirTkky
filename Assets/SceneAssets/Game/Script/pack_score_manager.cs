@@ -19,6 +19,7 @@ namespace PackScoreManager
         {
             PackGameManager = FindObjectOfType<pack_game_manager>();
             HandleGameManager = FindObjectOfType<handle_game_manager>();
+            scoreUIManager = FindObjectOfType<ScoreUIManager>();
         }
 
         // �ǂɓ����������ɌĂ΂�郁�\�b�h
@@ -42,6 +43,7 @@ namespace PackScoreManager
                                                     // �K�v�ɉ����ē��_��UI�ɔ��f�����鏈����ǉ�
 
                 PackGameManager.StartRalley(players.enemy);
+                HandleGameManager.StartRalley();
             }
         }
     }
