@@ -131,6 +131,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3746988935150692409, guid: d7638026076f6cf4d81bc29b5d168403, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6409659902093548748, guid: d7638026076f6cf4d81bc29b5d168403, type: 3}
+      propertyPath: myForce
+      value: 10000
+      objectReference: {fileID: 0}
     - target: {fileID: 7046517336311867585, guid: d7638026076f6cf4d81bc29b5d168403, type: 3}
       propertyPath: m_Name
       value: handle_cup_tenkey
@@ -175,7 +183,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4296030973989449978, guid: d7638026076f6cf4d81bc29b5d168403, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -474,6 +483,10 @@ PrefabInstance:
     - target: {fileID: 1942611543311561296, guid: f425fdea46648654d89fa6cefa0ee8c9, type: 3}
       propertyPath: m_Name
       value: puck
+      objectReference: {fileID: 0}
+    - target: {fileID: 4506852657143189806, guid: f425fdea46648654d89fa6cefa0ee8c9, type: 3}
+      propertyPath: m_Constraints
+      value: 116
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

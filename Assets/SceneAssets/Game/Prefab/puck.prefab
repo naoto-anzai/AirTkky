@@ -13,7 +13,8 @@ GameObject:
   - component: {fileID: 7823917726241495094}
   - component: {fileID: 8834939719927627329}
   - component: {fileID: 7998956242420000172}
-  - component: {fileID: 7045330701312574718}
+  - component: {fileID: 5446588372142930638}
+  - component: {fileID: 1356735920990775845}
   m_Layer: 0
   m_Name: puck
   m_TagString: Untagged
@@ -62,7 +63,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 112
-  m_CollisionDetection: 1
+  m_CollisionDetection: 2
 --- !u!33 &7823917726241495094
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -135,7 +136,7 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 0
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &7045330701312574718
+--- !u!114 &5446588372142930638
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -144,6 +145,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 1942611543311561296}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef59928c0a0c90147a407ff97adb1cf0, type: 3}
+  m_Script: {fileID: 11500000, guid: 57f80cf6162fc8d4a92d2c97527dda41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  score_player: 0
+  score_enemy: 0
+--- !u!114 &1356735920990775845
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1942611543311561296}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1440f1cc444c04144a03762a73a03edd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  offset: 1
+  InitializedPos: {x: 0, y: 0, z: 0}
