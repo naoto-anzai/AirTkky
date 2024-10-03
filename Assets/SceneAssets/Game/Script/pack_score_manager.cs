@@ -1,45 +1,49 @@
 using System.Collections.Specialized;
 using UnityEngine;
 using GameStates;
-using PackGameManager;
 
 namespace PackScoreManager
 {
     public class pack_score_manager : MonoBehaviour
     {
-        public int score_player = 0; // Œ»İ‚Ì©g‚Ì“¾“_‚ğ•Û‚·‚é•Ï”
-        public int score_enemy = 0;  // Œ»İ‚Ì‘Šè‚Ì“¾“_‚ğ•Û‚·‚é•Ï”
+        public int score_player = 0; // ï¿½ï¿½ï¿½İ‚Ìï¿½ï¿½gï¿½Ì“ï¿½ï¿½_ï¿½ï¿½Ûï¿½ï¿½ï¿½ï¿½ï¿½Ïï¿½
+        public int score_enemy = 0;  // ï¿½ï¿½ï¿½İ‚Ì‘ï¿½ï¿½ï¿½Ì“ï¿½ï¿½_ï¿½ï¿½Ûï¿½ï¿½ï¿½ï¿½ï¿½Ïï¿½
 
-        pack_game_manager MyGameManager;
+        pack_game_manager PackGameManager;
+        handle_game_manager HandleGameManager;
+
         ScoreUIManager scoreUIManager;
 
-        // ƒQ[ƒ€ŠJn‚ÉŒÄ‚Î‚ê‚éƒƒ\ƒbƒh
+        // ï¿½Qï¿½[ï¿½ï¿½ï¿½Jï¿½nï¿½ï¿½ï¿½ÉŒÄ‚Î‚ï¿½éƒï¿½\ï¿½bï¿½h
         void Start()
         {
-            MyGameManager = FindObjectOfType<pack_game_manager>();
+            PackGameManager = FindObjectOfType<pack_game_manager>();
+            HandleGameManager = FindObjectOfType<handle_game_manager>();
             scoreUIManager = FindObjectOfType<ScoreUIManager>();
         }
 
-        // •Ç‚É“–‚½‚Á‚½‚ÉŒÄ‚Î‚ê‚éƒƒ\ƒbƒh
+        // ï¿½Ç‚É“ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÉŒÄ‚Î‚ï¿½éƒï¿½\ï¿½bï¿½h
         private void OnTriggerEnter(Collider Wall)
         {
-            if (Wall.CompareTag("WallPlayer")) // "WallPlayer" ƒ^ƒO‚ğ‚ÂƒIƒuƒWƒFƒNƒg‚ÆÕ“Ë‚µ‚½
+            if (Wall.CompareTag("WallPlayer")) // "WallPlayer" ï¿½^ï¿½Oï¿½ï¿½ï¿½ï¿½ï¿½ÂƒIï¿½uï¿½Wï¿½Fï¿½Nï¿½gï¿½ÆÕ“Ë‚ï¿½ï¿½ï¿½ï¿½ï¿½
             {
-                score_player += 1; // “¾“_‚ğ‰ÁZ
+                score_player += 1; // ï¿½ï¿½ï¿½_ï¿½ï¿½ï¿½ï¿½ï¿½Z
                 scoreUIManager.UpdateScore(score_player, score_enemy);
-                Debug.Log("Score: " + score_player); // “¾“_‚ğ•\¦
-                                                     // •K—v‚É‰‚¶‚Ä“¾“_‚ğUI‚É”½‰f‚³‚¹‚éˆ—‚ğ’Ç‰Á
-                MyGameManager.StartRalley(players.enemy);
+                Debug.Log("Score: " + score_player); // ï¿½ï¿½ï¿½_ï¿½ï¿½\ï¿½ï¿½
+                                                     // ï¿½Kï¿½vï¿½É‰ï¿½ï¿½ï¿½ï¿½Ä“ï¿½ï¿½_ï¿½ï¿½UIï¿½É”ï¿½ï¿½fï¿½ï¿½ï¿½ï¿½ï¿½éˆï¿½ï¿½ï¿½ï¿½Ç‰ï¿½
+                PackGameManager.StartRalley(players.player);
+                HandleGameManager.StartRalley();
                 
             }
-            else if (Wall.CompareTag("WallEnemy")) // "WallEnemy" ƒ^ƒO‚ğ‚ÂƒIƒuƒWƒFƒNƒg‚ÆÕ“Ë‚µ‚½
+            else if (Wall.CompareTag("WallEnemy")) // "WallEnemy" ï¿½^ï¿½Oï¿½ï¿½ï¿½ï¿½ï¿½ÂƒIï¿½uï¿½Wï¿½Fï¿½Nï¿½gï¿½ÆÕ“Ë‚ï¿½ï¿½ï¿½ï¿½ï¿½
             {
-                score_enemy += 1; // “¾“_‚ğ‰ÁZ
+                score_enemy += 1; // ï¿½ï¿½ï¿½_ï¿½ï¿½ï¿½ï¿½ï¿½Z
                 scoreUIManager.UpdateScore(score_player, score_enemy);
-                Debug.Log("Score: " + score_enemy); // “¾“_‚ğ•\¦
-                                                    // •K—v‚É‰‚¶‚Ä“¾“_‚ğUI‚É”½‰f‚³‚¹‚éˆ—‚ğ’Ç‰Á
+                Debug.Log("Score: " + score_enemy); // ï¿½ï¿½ï¿½_ï¿½ï¿½\ï¿½ï¿½
+                                                    // ï¿½Kï¿½vï¿½É‰ï¿½ï¿½ï¿½ï¿½Ä“ï¿½ï¿½_ï¿½ï¿½UIï¿½É”ï¿½ï¿½fï¿½ï¿½ï¿½ï¿½ï¿½éˆï¿½ï¿½ï¿½ï¿½Ç‰ï¿½
 
-                MyGameManager.StartRalley(players.player);
+                PackGameManager.StartRalley(players.enemy);
+                HandleGameManager.StartRalley();
             }
         }
     }

@@ -224,6 +224,7 @@ GameObject:
   - component: {fileID: 8057238551562451322}
   - component: {fileID: 3746988935150692409}
   - component: {fileID: 2368143692536157662}
+  - component: {fileID: 3892282802227931603}
   m_Layer: 0
   m_Name: handle_cup_tenkey
   m_TagString: Untagged
@@ -291,3 +292,16 @@ MonoBehaviour:
   maxSpeed: 7
   speedDecrease: 0.001
   minSpeed: 0.1
+--- !u!114 &3892282802227931603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7046517336311867585}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83635206f64eaf04f94103db8676cf15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InitializedPos: {x: 0, y: 0, z: 0}
