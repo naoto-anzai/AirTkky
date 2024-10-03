@@ -1,0 +1,45 @@
+{
+    "scenario": [
+        {
+            "id": 1,
+            "characterName": "Matsu",
+            "dialogue": "もしもし。"
+        },
+        {
+            "id": 2,
+            "characterName": "Matsu",
+            "dialogue": "オイラ　リカちゃん？",
+            "choices": [
+                {
+                    "text": "はい",
+                    "nextDialogueId": 6
+                },
+                {
+                    "text": "いいえ",
+                    "nextDialogueId": 3
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "characterName": "Matsu",
+            "dialogue": "そうか　じゃあ　これからもオイラのことはMatsuって　よんでくれ。"
+        },
+        {
+            "id": 4,
+            "characterName": "Matsu",
+            "dialogue": "ときどき　かくにんしないと。"
+        },
+        {
+            "id": 5,
+            "characterName": "Matsu",
+            "dialogue": "いつ　じぶんのなまえが　かわってるか　わからないからな。",
+            "nextDialogueId": -1
+        },
+        {
+            "id": 6,
+            "characterName": "リカちゃん",
+            "dialogue": " そうか。じゃあ　こんどから　そう　よんでくれ。"
+        }
+    ]
+}
