@@ -35,6 +35,7 @@ public class IntroDialogueManager : MonoBehaviour
     [SerializeField] GameObject choiceBox;
     [SerializeField] GameObject choiceButton;
     [SerializeField] GameObject nextTriangle;
+    [SerializeField] string dialogueJsonName;
     [SerializeField] float typeSpeed = 0.1f;
     [SerializeField] float nextTriangleSpeed;
     [SerializeField] float nextTriangleTravelDistance;
@@ -53,7 +54,7 @@ public class IntroDialogueManager : MonoBehaviour
         charactorNameText = CharactorNameGameObject.GetComponentInChildren<TextMeshProUGUI>();
         dialogueText = dialogueGameObject.GetComponentInChildren<TextMeshProUGUI>();
 
-        TextAsset jsonText = Resources.Load<TextAsset>("Dialogue/intro");
+        TextAsset jsonText = Resources.Load<TextAsset>("Dialogue/"+dialogueJsonName);
         DialogueList dialogueList = JsonUtility.FromJson<DialogueList>(jsonText.text);
         scenario = dialogueList.scenario;
         scenario.Add(new Dialogue());

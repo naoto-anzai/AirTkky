@@ -175,7 +175,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 970891060}
+  m_Material: {fileID: 1025476982}
   m_Color: {r: 0.9372549, g: 1, b: 0.9882353, a: 0.6745098}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
@@ -687,7 +687,63 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 970401119}
   m_CullTransparentMesh: 1
---- !u!21 &970891060
+--- !u!1 &985045849
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 985045850}
+  - component: {fileID: 985045851}
+  m_Layer: 0
+  m_Name: DialogueParent
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &985045850
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 985045849}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 23277898}
+  - {fileID: 1856438023}
+  - {fileID: 52824620}
+  m_Father: {fileID: 1477823942}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &985045851
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 985045849}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5f2e292f468cb44da7911b1d437db36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CharactorNameGameObject: {fileID: 1689203130}
+  dialogueGameObject: {fileID: 970401119}
+  choiceBox: {fileID: 1856438022}
+  choiceButton: {fileID: 7072660384208373964, guid: d27aa10aca70beb43a165374bf9e8638, type: 3}
+  nextTriangle: {fileID: 52824619}
+  dialogueJsonName: intro
+  typeSpeed: 0.075
+  nextTriangleSpeed: 0.5
+  nextTriangleTravelDistance: 20
+--- !u!21 &1025476982
 Material:
   serializedVersion: 8
   m_ObjectHideFlags: 0
@@ -781,61 +837,6 @@ Material:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
   m_BuildTextureStacks: []
---- !u!1 &985045849
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 985045850}
-  - component: {fileID: 985045851}
-  m_Layer: 0
-  m_Name: DialogueParent
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &985045850
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 985045849}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 23277898}
-  - {fileID: 1856438023}
-  - {fileID: 52824620}
-  m_Father: {fileID: 1477823942}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &985045851
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 985045849}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5f2e292f468cb44da7911b1d437db36, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CharactorNameGameObject: {fileID: 1689203130}
-  dialogueGameObject: {fileID: 970401119}
-  choiceBox: {fileID: 1856438022}
-  choiceButton: {fileID: 7072660384208373964, guid: d27aa10aca70beb43a165374bf9e8638, type: 3}
-  nextTriangle: {fileID: 52824619}
-  typeSpeed: 0.075
-  nextTriangleSpeed: 0.5
-  nextTriangleTravelDistance: 20
 --- !u!1 &1095318308
 GameObject:
   m_ObjectHideFlags: 0
