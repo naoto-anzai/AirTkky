@@ -1,0 +1,44 @@
+{
+    "scenario": [
+        {
+            "id": 1,
+            "characterName": "コタッキー",
+            "dialogue": "お前が単位を奪い取られた哀れな高専生か"
+        },
+        {
+            "id": 2,
+            "characterName": "",
+            "dialogue": "手紙に書かれた住所に向かうと、目の前にこの世のものとは思えない生物が浮遊している"
+        },
+        {
+            "id": 3,
+            "characterName": "コタッキー",
+            "dialogue": "俺の名前はコタッキー。この新技術の管理を任されている妖精だ。"
+        },
+        {
+            "id": 4,
+            "characterName": "コタッキー",
+            "dialogue": "お前も単位を返してほしくてここまで来たのか?"
+        },
+        {
+            "id": 5,
+            "characterName": "__player",
+            "dialogue": "ああそうだ!!早く俺の単位を返せ!!"
+        },
+        {
+            "id": 6,
+            "characterName": "コタッキー",
+            "dialogue": "まぁまぁ焦るな。この新技術のシステムから説明してやろう。"
+        },
+		{
+			"id": 7,
+            "characterName": "",
+            "dialogue": "パチっ"
+        },
+		{
+            "id": 8,
+            "characterName": "__Coment",
+            "dialogue": "---ここでScene移動して、チュートリアル開始"
+        }
+    ]
+}
