@@ -4,48 +4,20 @@ using UnityEngine;
 
 public class handle_cup_mouse : MonoBehaviour
 {
-    [SerializeField] Transform cube;
-    [SerializeField] float forceMultiplier = 10;
-    [SerializeField] float minSpeed = 0.1f;
-
-    Rigidbody rigidBody;
-    Vector3 closestPoint;
-
-    private void Start()
-    {
-        rigidBody = GetComponent<Rigidbody>();
-        closestPoint = transform.position;
-    }
+    //座標用の変数
+    Vector3 mousePos, worldPos;
+    //y座標固定のための定数
+    const float const_y = 0.33F;
+    //座標補整のための定数
+    const int conv_corr = 2;
 
     void Update()
     {
-        MoveTo(closestPoint);
-
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        Plane plane = new Plane(Vector3.up, Vector3.zero);
-
-        if (plane.Raycast(ray, out float enter))
-        {
-            Vector3 mousePos = ray.GetPoint(enter);
-            Vector3 targetPos = new Vector3(mousePos.x, transform.position.y, mousePos.z);
-
-            closestPoint = cube.GetComponent<Collider>().ClosestPoint(targetPos);
-        }
-    }
-
-    void MoveTo(Vector3 target)
-    {
-        transform.position = target;
-        return;
-
-        /*
-        Vector3 direction = (target - rigidBody.position).normalized;
-        float distance = Vector3.Distance(target, rigidBody.position);
-
-        if (distance < minSpeed) return;
-
-        rigidBody.velocity = Vector3.zero;
-        rigidBody.AddForce(direction*Mathf.Pow(distance*forceMultiplier, 2));
-        */
+        //マウス座標の取得
+        mousePos = Input.mousePosition;
+        //スクリーン座標をワールド座標に変換
+        worldPos = Camera.main.ScreenToWorldPoint(new Vector3(mousePos.x, mousePos.y, 10f));
+        //ワールド座標を自身の座標に設定
+        transform.position = new Vector3(worldPos.x/conv_corr,const_y, worldPos.z/conv_corr);
     }
 }
