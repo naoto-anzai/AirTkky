@@ -9,6 +9,9 @@ using System.Security.Cryptography;
 public class pack_game_manager : MonoBehaviour
 {
     public float offset = 1f;
+    public float minSpeed = 0.1f;
+    public float maxSpeed = 8f;
+    public float speedDecrease = 1f;
     public Vector3 InitializedPos;
     Rigidbody myRigidbody;
 
@@ -27,6 +30,14 @@ public class pack_game_manager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {  
-   
+        myRigidbody.velocity *= 1 - (speedDecrease * Time.deltaTime);
+        if(myRigidbody.velocity.magnitude < minSpeed)
+        {
+            myRigidbody.velocity = Vector3.zero;
+        }
+        if(myRigidbody.velocity.magnitude > maxSpeed)
+        {
+            myRigidbody.velocity = myRigidbody.velocity.normalized * maxSpeed;
+        }
     }
 }

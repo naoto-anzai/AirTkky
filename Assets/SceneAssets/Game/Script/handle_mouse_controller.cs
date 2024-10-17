@@ -7,7 +7,8 @@ public class handle_cup_mouse : MonoBehaviour
     //座標用の変数
     Vector3 mousePos, worldPos;
     //y座標固定のための定数
-    const float const_y = 0.33F;
+    //const float const_y = 0.33F;
+    const float const_y = 0f;
     //座標補整のための定数
     const int conv_corr = 2;
 
