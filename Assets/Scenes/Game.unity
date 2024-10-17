@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028328, g: 0.22571322, b: 0.30692163, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -830,7 +830,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
---- !u!21 &731100133
+--- !u!21 &717863678
 Material:
   serializedVersion: 8
   m_ObjectHideFlags: 0
@@ -1635,7 +1635,17 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 413776613}
   m_SourcePrefab: {fileID: 100100000, guid: 9feba127b620c034e9dfd3c43df02856, type: 3}
---- !u!21 &1249854959
+--- !u!4 &1257939699 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6353256118173650234, guid: 4893592930a7faa428d2994530b1a0e5, type: 3}
+  m_PrefabInstance: {fileID: 8657325402676015642}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1587563609 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 8eab85417023b2940b2a3bc4ac194b80, type: 3}
+  m_PrefabInstance: {fileID: 684025167}
+  m_PrefabAsset: {fileID: 0}
+--- !u!21 &1687861912
 Material:
   serializedVersion: 8
   m_ObjectHideFlags: 0
@@ -1729,16 +1739,6 @@ Material:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
   m_BuildTextureStacks: []
---- !u!4 &1257939699 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6353256118173650234, guid: 4893592930a7faa428d2994530b1a0e5, type: 3}
-  m_PrefabInstance: {fileID: 8657325402676015642}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &1587563609 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 8eab85417023b2940b2a3bc4ac194b80, type: 3}
-  m_PrefabInstance: {fileID: 684025167}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1800660326 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 9feba127b620c034e9dfd3c43df02856, type: 3}
@@ -1770,7 +1770,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myForce: 10000
-  maxSpeed: 7
+  maxSpeed: 5
   speedDecrease: 0.001
   minSpeed: 0.1
 --- !u!54 &1800660329
@@ -1946,6 +1946,10 @@ PrefabInstance:
     - target: {fileID: 458757287509462987, guid: f425fdea46648654d89fa6cefa0ee8c9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1356735920990775845, guid: f425fdea46648654d89fa6cefa0ee8c9, type: 3}
+      propertyPath: speedDecrease
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 1942611543311561296, guid: f425fdea46648654d89fa6cefa0ee8c9, type: 3}
       propertyPath: m_Name
