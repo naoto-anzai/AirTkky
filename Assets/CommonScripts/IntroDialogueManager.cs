@@ -18,7 +18,7 @@ public class IntroDialogueManager : MonoBehaviour
     public class Dialogue
     {
         public int id;
-        public string characterName;
+        public string characterName = "";
         public string dialogue = "";
         public List<Choice> choices;
         public int nextDialogueId;
