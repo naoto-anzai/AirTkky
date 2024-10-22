@@ -1,0 +1,16 @@
+{
+    "scenario": [
+		{
+			"id": 1,
+			"dialogue": "Assets/CommonAssetsにあるCanvasのPrefabを空シーンにドラッグ&ドロップ"
+		},
+        {
+            "id": 2,
+            "dialogue": "Assets/Resources/Dialogue以下にjson形式でシナリオを保管"
+        },
+		{
+			"id": 3,
+			"dialogue": "HierarchyのCanvas/DialogueParentにアタッチされたDialogueJsonNameでjsonを指定"
+		}
+    ]
+}
