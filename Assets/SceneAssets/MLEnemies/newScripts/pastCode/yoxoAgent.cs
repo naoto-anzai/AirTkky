@@ -59,7 +59,7 @@ public class yoxoAgent : Agent
         float distanceToTarget = Vector3.Distance(fixedTFPaddle, Target.localPosition);
 
         // Reached target
-        if (distanceToTarget < 0.4f)
+        if (distanceToTarget < 0.5f)
         {
             SetReward(1.0f);
             EndEpisode();
