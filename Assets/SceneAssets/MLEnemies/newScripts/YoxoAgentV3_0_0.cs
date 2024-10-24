@@ -34,21 +34,21 @@ public class YoxoAgentV3_0_0 : MonoBehaviour
         }
 
         // 外へ行ってしまったとき(xが-)
-        if ((float)TrainingManager.mySide * Parent.localPosition.x
-           < -1.5f + (float)TrainingManager.mySide * offset_paddle)
+        if (Parent.localPosition.x
+           < -1.5f + offset_paddle)
         {
             Parent.transform.localPosition = new Vector3(
-            -1.5f + (float)TrainingManager.mySide * offset_paddle,
+            -1.5f + offset_paddle,
             Parent.localPosition.y,
             Parent.localPosition.z);
         }
 
         // 外へ行ってしまったとき(xが+)
-        if ((float)TrainingManager.mySide * Parent.localPosition.x
-           > 1.5f - (float)TrainingManager.mySide * offset_paddle)
+        if (Parent.localPosition.x
+           > 1.5f - offset_paddle)
         {
             Parent.transform.localPosition = new Vector3(
-            1.5f - (float)TrainingManager.mySide * offset_paddle,
+            1.5f - offset_paddle,
             Parent.localPosition.y,
             Parent.localPosition.z);
         }
@@ -67,7 +67,7 @@ public class YoxoAgentV3_0_0 : MonoBehaviour
 
     public void transPosition(float x, float y, float z)
     {
-        Parent.transform.localPosition = new Vector3(
+        Parent.localPosition = new Vector3(
             Parent.localPosition.x + x,
             Parent.localPosition.y + y,
             Parent.localPosition.z + z);

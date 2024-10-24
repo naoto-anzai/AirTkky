@@ -16,7 +16,7 @@ public class TM_V3_0_0_tester : Agent
     public float Outline = -2.3f;
 
     int isSwitch = 0;
-    int count = 0;
+    public int count = 0;
 
     public float time_limit = 0f;
     public float time_limit_behind = 3f;
@@ -68,18 +68,18 @@ public class TM_V3_0_0_tester : Agent
         sensor.AddObservation(Agent.localPosition);
 
         // Target and Agent velocities
-        sensor.AddObservation(TargetManager.GetVelocityX());
-        sensor.AddObservation(TargetManager.GetVelocityZ());
-        sensor.AddObservation(YoxoAgent.GetVelocityX());
-        sensor.AddObservation(YoxoAgent.GetVelocityZ());
+        sensor.AddObservation((float)mySide * TargetManager.GetVelocityX());
+        sensor.AddObservation((float)mySide * TargetManager.GetVelocityZ());
+        sensor.AddObservation((float)mySide * YoxoAgent.GetVelocityX());
+        sensor.AddObservation((float)mySide * YoxoAgent.GetVelocityZ());
     }
 
     public override void OnActionReceived(ActionBuffers actionBuffers)
     {
         // Actions, size = 2
         Vector3 controlSignal = Vector3.zero;
-        controlSignal.x = actionBuffers.ContinuousActions[0];
-        controlSignal.z = actionBuffers.ContinuousActions[1];
+        controlSignal.x = (float)mySide * actionBuffers.ContinuousActions[0];
+        controlSignal.z = (float)mySide * actionBuffers.ContinuousActions[1];
         YoxoAgent.transPosition(controlSignal.x * TransMultiplierAgent * Time.deltaTime,
                                 0,
                                 controlSignal.z * TransMultiplierAgent * Time.deltaTime);

@@ -15,6 +15,8 @@ public class TargetManagerV2_1_0 : MonoBehaviour
     public Vector3 InitPos;
     public int score_player;
     public int score_enemy;
+
+    float velocityX, velocityZ, velocityMag;
    
     
     // Start is called before the first frame update
@@ -32,7 +34,9 @@ public class TargetManagerV2_1_0 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        velocityX = rBody.velocity.x;
+        velocityZ = rBody.velocity.z;
+        velocityMag = rBody.velocity.magnitude;
     }
 
     private void OnTriggerEnter(Collider Wall)
@@ -40,26 +44,31 @@ public class TargetManagerV2_1_0 : MonoBehaviour
         if (Wall.CompareTag("WallPlayer")) // "WallPlayer" �^�O�����I�u�W�F�N�g�ƏՓ˂�����
         {
             score_player = 1;
-            PackGameManager.StartRalley(players.player);
+            PackGameManager.StartRalley(players.enemy);
             HandleGameManager.StartRalley();
 
         }
         else if (Wall.CompareTag("WallEnemy")) // "WallEnemy" �^�O�����I�u�W�F�N�g�ƏՓ˂�����
         {
             score_enemy = 1;
-            PackGameManager.StartRalley(players.enemy);
+            PackGameManager.StartRalley(players.player);
             HandleGameManager.StartRalley();
         }
     }
 
     public float GetVelocityX()
     {
-        return rBody.velocity.x;
+        return velocityX;
     }
 
     public float GetVelocityZ()
     {
-        return rBody.velocity.z;
+        return velocityZ;
+    }
+
+    public float GetVelocityMag()
+    {
+        return velocityMag;
     }
 
     public void SetVelocityZero()

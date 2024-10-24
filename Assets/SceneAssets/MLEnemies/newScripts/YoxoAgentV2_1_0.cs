@@ -67,7 +67,7 @@ public class YoxoAgentV2_1_0 : MonoBehaviour
 
     public void transPosition(float x, float y, float z)
     {
-        Parent.transform.localPosition = new Vector3(
+        Parent.localPosition = new Vector3(
             Parent.localPosition.x + x,
             Parent.localPosition.y + y,
             Parent.localPosition.z + z);
