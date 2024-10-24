@@ -24,7 +24,7 @@ public class ScoreUIManager : MonoBehaviour
         scorePopupText.gameObject.SetActive(false);
     }
 
-    public void UpdateScore(int playerScore, int enemyScore)
+    public IEnumerator UpdateScore(int playerScore, int enemyScore)
     {
         playerScoreText.text = playerScore.ToString();
         enemyScoreText.text = enemyScore.ToString();
@@ -32,12 +32,21 @@ public class ScoreUIManager : MonoBehaviour
         scorePopupText.text = ($"{playerScore}-{enemyScore}");
         scorePopupText.gameObject.SetActive(true);
 
-        StartCoroutine(HidePopupAfterDelay());
-    }
-
-    private IEnumerator HidePopupAfterDelay()
-    {
         yield return new WaitForSeconds(delayDuration);
+
+        if (playerScore == 7 || enemyScore == 7)
+        {
+            if (playerScore == 7)
+            {
+                scorePopupText.text = ("YOU WIN");
+            }
+            else
+            {
+                scorePopupText.text = ("YOU LOSE");
+            }
+            yield return new WaitForSeconds(delayDuration);
+        }
+
         scorePopupText.gameObject.SetActive(false);
     }
 }
