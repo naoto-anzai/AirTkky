@@ -7,19 +7,16 @@ using GameStates;
 using System;
 using System.Threading;
 
-public class TM_V2_1_0 : Agent
+public class TM_V3_0_0_tester : Agent
 {
     public players mySide;
 
     public float offset_behind = 0.1f;
     public float Xlifeline = 0.4f;
     public float Outline = -2.3f;
-    public float MaxDynaToReward = 1;
 
     int isSwitch = 0;
     int count = 0;
-
-    public int MaxCount = 0;
 
     public float time_limit = 0f;
     public float time_limit_behind = 3f;
@@ -29,16 +26,16 @@ public class TM_V2_1_0 : Agent
 
     public Vector3 TargetInitPos, AgentInitPos;
 
-    TargetManagerV2_1_0 TargetManager;
-    YoxoAgentV2_1_0 YoxoAgent;
+    TargetManagerV2_0_0 TargetManager;
+    YoxoAgentV3_0_0 YoxoAgent;
 
     public Transform Target;
     public Transform Agent;
 
     void Start()
     {
-        TargetManager = FindObjectOfType<TargetManagerV2_1_0>();
-        YoxoAgent = FindObjectOfType<YoxoAgentV2_1_0>();
+        TargetManager = FindObjectOfType<TargetManagerV2_0_0>();
+        YoxoAgent = FindObjectOfType<YoxoAgentV3_0_0>();
 
         TargetInitPos = Target.localPosition;
         AgentInitPos = Agent.localPosition;
@@ -48,13 +45,20 @@ public class TM_V2_1_0 : Agent
 
     public override void OnEpisodeBegin()
     {
-        count++;
+        count += 1;
         // もろもろの初期化
         time_limit = 0f;
-
-        if (count > MaxCount){//MaxCount回ラリーが続いたら初期化
+        // countが10になったらエージェントを初期状態へ戻す
+        if(count > 10)
+        {
             count = 0;
-        }
+            Agent.localPosition = AgentInitPos;
+            YoxoAgent.SetVelocityZero();
+            Target.localPosition = TargetInitPos;
+            TargetManager.SetVelocityZero();
+        } 
+        // パックの射出
+        //TargetManager.ShootTarget();
     }
 
     public override void CollectObservations(VectorSensor sensor)
@@ -92,6 +96,9 @@ public class TM_V2_1_0 : Agent
         //残り時間を減らす
         time_limit += -1f * Time.deltaTime;
 
+        // パックより少し後ろに時間停止ゾーンを調整
+        float distanceToTarget = Vector3.Distance(fixedTFPaddle, Target.localPosition);
+
         // 一定時間パックに触らなかったら終了
         if (time_limit < -10)
         {
@@ -101,88 +108,30 @@ public class TM_V2_1_0 : Agent
         // 残り時間が一定時間以上になると終了
         if (time_limit > 10)
         {
-            Target.localPosition = TargetInitPos;
-            TargetManager.SetVelocityZero();
-            Agent.localPosition = AgentInitPos;
-            YoxoAgent.SetVelocityZero();
-
             EndEpisode();
         }
 
-        // パックが相手陣地へ進むとrewardと時間を増やし続ける（一定に保つ)
-        if (TargetManager.GetVelocityZ() * (float)mySide > 0)
+        // パックが相手陣地へ進むとrewargを1に設定して終了
+        /*if (TargetManager.GetVelocityZ() * (float)mySide > 0)
         {
-            AddReward(0.1f * Time.deltaTime);
-            time_limit += 1f * Time.deltaTime;
-        }
-
-        // エージェントがパックより後ろにいるとき、rewardを増加
-        if ((float)mySide * Target.localPosition.z * (-1) > (float)mySide * Agent.localPosition.z * (-1))
-        {
-            AddReward(0.1f * Time.deltaTime);
+            SetReward(1.0f);
+            EndEpisode();
         }
 
         // 一定の距離中心より離れたら、rewardを-1に設定して終了
-        if ((float)mySide * Target.localPosition.z < Outline)
+        if (Target.localPosition.z < (float)mySide * Outline)
         {
             SetReward(-1.0f);
-
-            Target.localPosition = TargetInitPos;
-            TargetManager.SetVelocityZero();
-            Agent.localPosition = AgentInitPos;
-            YoxoAgent.SetVelocityZero();
-
             EndEpisode();
         }
 
-        // エージェントのx座標とターゲットのx座標が近ければrewardを増やし続ける
+        // エージェントのx座標とターゲットのx座標が近ければ近いほどrewardを増やす
         float DistanceOfX = (Agent.localPosition.x - Target.localPosition.x)
                             * (Agent.localPosition.x - Target.localPosition.x);
         if ((DistanceOfX <= Xlifeline) && (DistanceOfX >= Xlifeline))
         {
-            if (TargetManager.GetVelocityZ() * (float)mySide < 0)
-            {
-                AddReward(0.1f * Time.deltaTime);
-            }
-            AddReward(0.1f * Time.deltaTime);
-
-            // エージェントが動いてない間はrewardを増やし続ける
-            float AgentVelocity = YoxoAgent.GetVelocityX() * YoxoAgent.GetVelocityZ();
-            if((AgentVelocity >= 0 - MaxDynaToReward) && (AgentVelocity <= 0 + MaxDynaToReward))
-            {
-                AddReward(0.1f * Time.deltaTime);
-            }
-        }
-
-        // 得点したらrewardを１に設定して終了
-        if (TargetManager.score_player == 1)
-        {
-            if (mySide == players.player)
-            {
-                SetReward(1.0f);
-                TargetManager.score_player = 0;
-            }
-            else
-            {
-                SetReward(-1.0f);
-            }
-            EndEpisode();
-        }
-        if (TargetManager.score_enemy == 1)
-        {
-            if (mySide == players.enemy)
-            {
-                SetReward(1.0f);
-                TargetManager.score_enemy = 0;
-            }
-            else
-            {
-                SetReward(-1.0f);
-            }
-            EndEpisode();
-        }
-
-
+            AddReward(0.2f * Time.deltaTime);
+        }*/
     }
 
     public override void Heuristic(in ActionBuffers actionsOut)
