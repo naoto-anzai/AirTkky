@@ -115,14 +115,20 @@ public class TM_V2_1_0 : Agent
         // ƒpƒbƒN‚ª‘Šèw’n‚Öi‚Ş‚Ærewarg‚ğ1‚Éİ’è‚µ‚ÄI—¹
         if (TargetManager.GetVelocityZ() * (float)mySide > 0)
         {
-            SetReward(1.0f);
-            EndEpisode();
+            AddReward(0.1f * Time.deltaTime);
+            time_limit += 1f * Time.deltaTime;
         }
 
         // ˆê’è‚Ì‹——£’†S‚æ‚è—£‚ê‚½‚çAreward‚ğ-1‚Éİ’è‚µ‚ÄI—¹
         if (Target.localPosition.z < (float)mySide * Outline)
         {
             SetReward(-1.0f);
+
+            Target.localPosition = TargetInitPos;
+            TargetManager.SetVelocityZero();
+            Agent.localPosition = AgentInitPos;
+            YoxoAgent.SetVelocityZero();
+
             EndEpisode();
         }
 
@@ -131,7 +137,46 @@ public class TM_V2_1_0 : Agent
                             * (Agent.localPosition.x - Target.localPosition.x);
         if ((DistanceOfX <= Xlifeline) && (DistanceOfX >= Xlifeline))
         {
-            AddReward(0.2f * Time.deltaTime);
+            if (TargetManager.GetVelocityZ() * (float)mySide < 0)
+            {
+                AddReward(0.1f * Time.deltaTime);
+            }
+            AddReward(0.1f * Time.deltaTime);
+
+            // ã‚¨ãƒ¼ã‚¸ã‚§ãƒ³ãƒˆãŒå‹•ã„ã¦ãªã„é–“ã¯rewardã‚’å¢—ã‚„ã—ç¶šã‘ã‚‹
+            float AgentVelocity = YoxoAgent.GetVelocityX() * YoxoAgent.GetVelocityZ();
+            if((AgentVelocity >= 0 - MaxDynaToReward) && (AgentVelocity <= 0 + MaxDynaToReward))
+            {
+                AddReward(0.1f * Time.deltaTime);
+            }
+        }
+
+        // å¾—ç‚¹ã—ãŸã‚‰rewardã‚’ï¼‘ã«è¨­å®šã—ã¦çµ‚äº†
+        if (TargetManager.score_player == 1)
+        {
+            if (mySide == players.player)
+            {
+                SetReward(1.0f);
+                TargetManager.score_player = 0;
+            }
+            else
+            {
+                SetReward(-1.0f);
+            }
+            EndEpisode();
+        }
+        if (TargetManager.score_enemy == 1)
+        {
+            if (mySide == players.enemy)
+            {
+                SetReward(1.0f);
+                TargetManager.score_enemy = 0;
+            }
+            else
+            {
+                SetReward(-1.0f);
+            }
+            EndEpisode();
         }
     }
 

@@ -6,7 +6,7 @@ public class YoxoAgentV3_0_0 : MonoBehaviour
 {
     Rigidbody rBody;
 
-    TM_V3_0_0 TrainingManager;
+    TM_V3_0_0_tester TrainingManager;
 
     public Transform Parent;
 
@@ -17,7 +17,7 @@ public class YoxoAgentV3_0_0 : MonoBehaviour
     {
         rBody = GetComponent<Rigidbody>();
 
-        TrainingManager = FindObjectOfType<TM_V3_0_0>();
+        TrainingManager = FindObjectOfType<TM_V3_0_0_tester>();
     }
 
     // Update is called once per frame
