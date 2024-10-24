@@ -1,0 +1,144 @@
+{
+    "scenario": [
+        {
+            "id": 1,
+            "characterName": "コタッキー",
+            "dialogue": "な、なんて学力だ！！は、計り知れない！！"
+        },
+        {
+            "id": 2,
+            "characterName": "P",
+            "dialogue": "さぁ、約束通り単位は渡してもらおうか！"
+        },
+        {
+            "id": 3,
+            "characterName": "S",
+            "dialogue": "突如、不思議な音が鳴り響き、背後から足音が鳴った。"
+        },
+        {
+            "id": 4,
+            "characterName": "滝沢",
+            "dialogue": "システムがオーバーフロー起こしたんだって？コタッキー"
+        },
+        {
+            "id": 5,
+            "characterName": "コタッキー",
+            "dialogue": "は、はい！この人間との勝負で測定値が振り切れました！！"
+            
+        },
+        {
+            "id": 6,
+            "characterName": "S",
+            "dialogue": " 謎の男…みたところ、天使の風貌をした男がこちらに向き直った。"
+        },
+        {
+            "id": 7,
+            "characterName": "滝沢",
+            "dialogue": " 君すごいねぇ！僕以外で初めての測定不能、おまけに純粋な人間ときたもんだ！！僕と一緒に研究しないかい！？"
+        },{
+            "id": 8,
+            "characterName": "P",
+            "dialogue": " は、はぁ…(なんだこいつ…)"
+        },{
+            "id": 9,
+            "characterName": "滝沢",
+            "dialogue": "自己紹介が遅れたね。僕は滝沢陽三。この天界の管理を任されている。このバトルフィールドはコタッキーに管理を任せているんだけど、"
+        },{
+            "id": 10,
+            "characterName": "滝沢",
+            "dialogue": "試験運用のシステムにクリア者がでるとこうしてチャレンジャーを褒めにくるんだ。でも、今回は褒めるのが目的じゃなくって"
+        },{
+            "id": 11,
+            "characterName": "S",
+            "dialogue": " 先ほどまでの友好的な雰囲気ではなく、猟奇的にも思えるような異様な雰囲気を纏う滝沢がこちらに向かってくる"
+        },{
+            "id": 12,
+            "characterName": "滝沢",
+            "dialogue": " 僕以外に測定不能がいたなんて！！ぜひ一緒に研究しよう！！悪魔や妖精じゃあ僕の足元にもおよばなくってね！！！"
+        },{
+            "id": 13,
+            "characterName": "P",
+            "dialogue": "(見たところ敵意はない、か…でも、)断らせてもらう。"
+        },{
+            "id": 14,
+            "characterName": "S",
+            "dialogue": "一瞬の沈黙ののち、静寂を滝沢が破った。"
+        },{
+            "id": 15,
+            "characterName": "滝沢",
+            "dialogue": "くっくっくっ、僕の誘いを断ったのも君が初めてだよ"
+        },{
+            "id": 16,
+            "characterName": "S",
+            "dialogue": "空間がゆがむほどの圧を滝沢が纏い始める "
+        },{
+            "id": 17,
+            "characterName": "滝沢",
+            "dialogue": "じゃあ僕と勝負しようか。勝てたら、この天界の半分と高専の単位すべてを僕の名のもとに与えよう"
+        },{
+            "id": 18,
+            "characterName": "S",
+            "dialogue": "突如、フィールドが変化した"
+        },{
+            "id": 19,
+            "characterName": "滝沢",
+            "dialogue": "この宇宙空間で、君を叩き潰そう"
+        },{
+            "id": 20,
+            "characterName": "P",
+            "dialogue": "くっ・・・"
+        },{
+            "id": 21,
+            "characterName": "S",
+            "dialogue": "宇宙空間でのエアホッケー。最高峰の学力を持つ二人の戦いが"
+        },{
+            "id": 22,
+            "characterName": "滝沢",
+            "dialogue": "いくぞ！！！！"
+        },{
+            "id": 23,
+            "characterName": "P",
+            "dialogue": "やるしかねぇぇぇぇぇ！！！！！！"
+        },{
+            "id": 24,
+            "characterName": "滝沢",
+            "dialogue": "…あれ?"
+        },{
+            "id": 25,
+            "characterName": "　　",
+            "dialogue": "チャンネル登録者は1000000000000000億万人になった。みんなもYoutube、始めよう!!"
+        },{
+            "id": 26,
+            "characterName": "滝沢",
+            "dialogue": "しまった！！！仕方ない、場所を変えて…"
+        },{
+            "id": 27,
+            "characterName": "S",
+            "dialogue": "しきりに指を鳴らそうとする滝沢だったが、音が鳴らない。"
+        },{
+            "id": 28,
+            "characterName": "滝沢",
+            "dialogue": "どうしよう、宇宙じゃ音も重力も空気もないじゃないか！帰れないここから帰れない！！！！"
+        },{
+            "id": 29,
+            "characterName": "コタッキー",
+            "dialogue": "危なかったな(お前)。あのまま宇宙にいたらどうなってたか。"
+        },{
+            "id": 30,
+            "characterName": "p",
+            "dialogue": "ありがとう。まさかコタッキーが地球から指を鳴らして戻してくれるとは。"
+        },{
+            "id": 31,
+            "characterName": "コタッキー",
+            "dialogue": "滝沢様は俺より立場が上だから戻せなかったけどな"
+        },{
+            "id": 32,
+            "characterName": "　　",
+            "dialogue": "滝沢は二度と地球へは戻れなかった…。鉱物と生物の中間の生命体となり、永遠に宇宙空間をさまようのだ。そして、どうしようもないので"
+        },{
+            "id": 33,
+            "characterName": "　　",
+            "dialogue": "─そのうち滝沢は、考えるのをやめた。"
+        }
+    ]
+}

@@ -1,0 +1,102 @@
+{
+    "scenario": [
+        {
+            "id": 1,
+            "characterName": "E",
+            "dialogue": "コタッキーふん、その程度の学力か…高専の未来が危ぶまれるな"
+        },
+        {
+            "id": 2,
+            "characterName": "S",
+            "dialogue": "コタッキーは背を向け、一切こちらを見ずに歩き始める"
+        },
+        {
+            "id": 3,
+            "characterName": "P",
+            "dialogue": "(お、俺の)単位をかえせぇぇぇぇぇぇぇぇ！！！！！！！"
+        },
+        {
+            "id": 4,
+            "characterName": "S",
+            "dialogue": "コタッキーの背中に追いすがろうとした。すると、手元に何かが触れた。"
+        },
+        {
+            "id": 5,
+            "characterName": "P",
+            "dialogue": "こ、これなら…",
+            "choices":[
+                {
+
+                    "text":"ロケットランチャーを打つ",
+                    "nextDialogueId":6
+                },
+                {
+                    "text":"ロケットランチャーを打たない",
+                    "nextDialogueId":16
+                }
+            ]
+        },
+        {
+            "id": 6,
+            "characterName": "P",
+            "dialogue": " これでも、くらえぇぇぇぇぇぇぇぇ！！！！"
+        },
+        {
+            "id": 7,
+            "characterName": "S",
+            "dialogue": " 手元に落ちていたロケットランチャーをコタッキーの背中めがけてぶっ放した。"
+        },{
+            "id": 8,
+            "characterName": "　　",
+            "dialogue": " 爆発音"
+        },{
+            "id": 9,
+            "characterName": "コタッキー",
+            "dialogue": "ぎゃあああああああああああああああ！！！！！！"
+        },{
+            "id": 10,
+            "characterName": "S",
+            "dialogue": "けたたましい音とともに、フィールドが崩壊した。"
+        },{
+            "id": 11,
+            "characterName": "P",
+            "dialogue": " ざまぁみやがれってんだよ！！"
+        },{
+            "id": 12,
+            "characterName": "S",
+            "dialogue": " 辺りを見回すと、元居た場所だった。時計を確認すると、来た時間と全く同じだった"
+        },{
+            "id": 13,
+            "characterName": "P",
+            "dialogue": " あっ…そういえば月曜日に提出の課題終わってねぇ!!どう頑張っても3日はかかるっていうのに!!"
+        },{
+            "id": 14,
+            "characterName": "P",
+            "dialogue": " 単位もうないけど呼び出しめんどいから出すしかねぇ！！！！かくなる上は…"
+        },{
+            "id": 15,
+            "characterName": "　　",
+            "dialogue": " 高専爆発(例のあれ)　　　やったぜ"
+        },{
+            "id": 16,
+            "characterName": "P",
+            "dialogue": "カール・グスタフなんて、打ち方わからねぇよ… "
+        },{
+            "id": 17,
+            "characterName": "S",
+            "dialogue": "力なくその場に倒れこむと、コタッキーが指を鳴らすと同時に元居た場所に立っていた。"
+        },{
+            "id": 18,
+            "characterName": "　　",
+            "dialogue": "はいどうも、高専中退系YoutuberのH〇KAK〇Nです！！！結局就職も進学も失敗した俺は、Youtuberになった。"
+        },{
+            "id": 19,
+            "characterName": "　　",
+            "dialogue": "今では高専という目新しいジャンルや、たこ焼きチェーン店でのバイト経験、ヒューマンビートボックスなどが大ウケした結果、"
+        },{
+            "id": 20,
+            "characterName": "　　",
+            "dialogue": "チャンネル登録者は1000000000000000億万人になった。みんなもYoutube、始めよう!!"
+        }
+    ]
+}
