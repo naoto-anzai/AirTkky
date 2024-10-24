@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class InvisibleWallBounceHandler : MonoBehaviour
 {
-    private void OnCollisionEnter(Collision collision)
+    [SerializeField] Transform puck;
+
+    private void Awake()
     {
-        if (collision.gameObject.CompareTag("Paddle")) return;
-        Physics.IgnoreCollision(collision.collider, GetComponent<Collider>());
+        Physics.IgnoreCollision(puck.GetComponent<Collider>(), GetComponent<Collider>());
     }
 }
