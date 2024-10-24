@@ -19,7 +19,7 @@ public class ml_manager : MonoBehaviour
         PackGameManager = FindObjectOfType<pack_game_manager>();
         HandleGameManager = FindObjectOfType<handle_game_manager>();
 
-        time_limit = 10;
+        time_limit = 0;
         PuckInitPos = this.transform.localPosition;
     }
 
@@ -49,6 +49,11 @@ public class ml_manager : MonoBehaviour
     public float getTime() 
     {
         return time_limit;
+    }
+
+    public void setTime(float set_time)
+    {
+        time_limit = set_time;
     }
 
     public void PosInitialize()
