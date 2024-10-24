@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class YoxoAgentV3_0_0 : MonoBehaviour
+public class YoxoAgentV2_1_0 : MonoBehaviour
 {
     Rigidbody rBody;
 
-    TM_V3_0_0_tester TrainingManager;
+    TM_V2_1_0 TrainingManager;
 
     public Transform Parent;
 
@@ -17,38 +17,38 @@ public class YoxoAgentV3_0_0 : MonoBehaviour
     {
         rBody = GetComponent<Rigidbody>();
 
-        TrainingManager = FindObjectOfType<TM_V3_0_0_tester>();
+        TrainingManager = FindObjectOfType<TM_V2_1_0>();
     }
 
     // Update is called once per frame
     void Update()
     {
         // 相手陣地へ行ってしまったとき
-        if((float)TrainingManager.mySide * Parent.localPosition.z 
+        if ((float)TrainingManager.mySide * Parent.localPosition.z
            > 0f - (float)TrainingManager.mySide * offset_paddle)
         {
             Parent.transform.localPosition = new Vector3(
             Parent.localPosition.x,
             Parent.localPosition.y,
-            0 - (float)TrainingManager.mySide * offset_paddle);
+            (float)TrainingManager.mySide * (0 - (float)TrainingManager.mySide * offset_paddle));
         }
 
         // 外へ行ってしまったとき(xが-)
-        if (Parent.localPosition.x
-           < -1.5f + offset_paddle)
+        if ((float)TrainingManager.mySide * Parent.localPosition.x
+           < -1.5f + (float)TrainingManager.mySide * offset_paddle)
         {
             Parent.transform.localPosition = new Vector3(
-            -1.5f + offset_paddle,
+            (float)TrainingManager.mySide * (-1.5f + (float)TrainingManager.mySide * offset_paddle),
             Parent.localPosition.y,
             Parent.localPosition.z);
         }
 
         // 外へ行ってしまったとき(xが+)
-        if (Parent.localPosition.x
-           > 1.5f - offset_paddle)
+        if ((float)TrainingManager.mySide * Parent.localPosition.x
+           > 1.5f - (float)TrainingManager.mySide * offset_paddle)
         {
             Parent.transform.localPosition = new Vector3(
-            1.5f - offset_paddle,
+            (float)TrainingManager.mySide * (1.5f - (float)TrainingManager.mySide * offset_paddle),
             Parent.localPosition.y,
             Parent.localPosition.z);
         }
@@ -60,7 +60,7 @@ public class YoxoAgentV3_0_0 : MonoBehaviour
             Parent.transform.localPosition = new Vector3(
             Parent.localPosition.x,
             Parent.localPosition.y,
-            -2.8f + (float)TrainingManager.mySide * offset_paddle);
+            (float)TrainingManager.mySide * (-2.8f +  offset_paddle));
         }
 
     }
@@ -85,6 +85,6 @@ public class YoxoAgentV3_0_0 : MonoBehaviour
 
     public void SetVelocityZero()
     {
-        rBody.velocity = Vector3.zero ;
+        rBody.velocity = Vector3.zero;
     }
 }

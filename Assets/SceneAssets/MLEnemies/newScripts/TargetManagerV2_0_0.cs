@@ -7,7 +7,7 @@ public class TargetManagerV2_0_0 : MonoBehaviour
 {
     Rigidbody rBody;
 
-    TM_V3_0_0 TrainingManager;
+    TM_V3_0_0_tester TrainingManager;
 
     public Vector3 InitPos;
     
@@ -16,7 +16,7 @@ public class TargetManagerV2_0_0 : MonoBehaviour
     {
         rBody = GetComponent<Rigidbody> ();
 
-        TrainingManager = FindObjectOfType<TM_V3_0_0>();
+        TrainingManager = FindObjectOfType<TM_V3_0_0_tester>();
 
         InitPos = this.transform.localPosition;
     }

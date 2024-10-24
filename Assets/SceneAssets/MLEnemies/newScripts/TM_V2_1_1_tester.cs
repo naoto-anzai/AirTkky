@@ -7,7 +7,7 @@ using GameStates;
 using System;
 using System.Threading;
 
-public class TM_V2_1_0 : Agent
+public class TM_V2_1_1_tester : Agent
 {
     public players mySide;
 
@@ -48,7 +48,6 @@ public class TM_V2_1_0 : Agent
 
     public override void OnEpisodeBegin()
     {
-        count++;
         // もろもろの初期化
         time_limit = 0f;
 
@@ -89,7 +88,7 @@ public class TM_V2_1_0 : Agent
             Agent.localPosition.z + 1.4f + (float)mySide * offset_behind);
 
         // 時間ごとにrewardを減らす
-        AddReward(-0.1f * Time.deltaTime);
+        /*AddReward(-0.1f * Time.deltaTime);
 
         //残り時間を減らす
         time_limit += -1f * Time.deltaTime;
@@ -129,7 +128,7 @@ public class TM_V2_1_0 : Agent
         {
             AddReward(1f * Time.deltaTime);
         }
-
+        */
         /*// パックより少し後ろに時間停止ゾーンを調整
         float distanceToTarget = Vector3.Distance(fixedTFPaddle, Target.localPosition);
 
@@ -173,23 +172,23 @@ public class TM_V2_1_0 : Agent
                             * (Agent.localPosition.x - Target.localPosition.x);
         if (DistanceOfX <= Xlifeline)
         {
-            AddReward(1f * Time.deltaTime);
+            //AddReward(1f * Time.deltaTime);
 
-            /*// エージェントが動いてない間はrewardを増やし続ける
+            // エージェントが動いてない間はrewardを増やし続ける
             float AgentVelocity = YoxoAgent.GetVelocityX() * YoxoAgent.GetVelocityZ();
             if((AgentVelocity >= 0 - MaxDynaToReward) && (AgentVelocity <= 0 + MaxDynaToReward))
             {
-                AddReward(0.1f * Time.deltaTime);
-            }*/
+            //     AddReward(0.1f * Time.deltaTime);
+            }
             // エージェントがパックより後ろにいるとき、rewardを増加
             if ((float)mySide * Target.localPosition.z * (-1) < (float)mySide * (Agent.localPosition.z + 1.4f) * (-1))
             {
-                AddReward(1f * Time.deltaTime);
+            //     AddReward(1f * Time.deltaTime);
 
                 // エージェントがパックの方向に動くとrewardを増やす
                 if ((float)mySide * YoxoAgent.GetVelocityZ() > 0)
                 {
-                    AddReward(1f * Time.deltaTime);
+            //     AddReward(1f * Time.deltaTime);
                 }
             }
             else
@@ -207,7 +206,7 @@ public class TM_V2_1_0 : Agent
                                        0,
                                        controlSignal.z * forceMultiplierAgent * (Target.localPosition.z - Agent.localPosition.z - 1.4f)));
 
-
+        /*
         // 得点したらrewardを１に設定して終了
         if (TargetManager.score_player == 1)
         {
@@ -235,7 +234,7 @@ public class TM_V2_1_0 : Agent
             }
             EndEpisode();
         }
-
+        */
 
     }
 
