@@ -123,7 +123,7 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!21 &789183052
+--- !u!21 &973444854
 Material:
   serializedVersion: 8
   m_ObjectHideFlags: 0
@@ -417,6 +417,10 @@ PrefabInstance:
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 1274030443}
+    - target: {fileID: 2495923713247775760, guid: bca923d18b8b0054bb2eaea950ac7aad, type: 3}
+      propertyPath: nextSceneName
+      value: Credits
+      objectReference: {fileID: 0}
     - target: {fileID: 6508698882155820210, guid: bca923d18b8b0054bb2eaea950ac7aad, type: 3}
       propertyPath: m_Name
       value: Canvas
