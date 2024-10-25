@@ -15,6 +15,8 @@ public class pack_game_manager : MonoBehaviour
     public Vector3 InitializedPos;
     Rigidbody myRigidbody;
 
+    [SerializeField] AudioManager audioManager;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -39,5 +41,11 @@ public class pack_game_manager : MonoBehaviour
         {
             myRigidbody.velocity = myRigidbody.velocity.normalized * maxSpeed;
         }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.name == "GND") return;
+        audioManager.PlayClackSound();
     }
 }
