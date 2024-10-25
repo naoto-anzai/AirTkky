@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using GameStates;
 
 public class ScoreUIManager : MonoBehaviour
 {
@@ -10,6 +11,10 @@ public class ScoreUIManager : MonoBehaviour
 
     [SerializeField] float delayDuration;
     [SerializeField] TextMeshProUGUI scorePopupText;
+
+    private gameresults isWin;
+
+    SceneLoadManager_test sceneLoadManager;
 
     private void Awake()
     {
@@ -21,6 +26,7 @@ public class ScoreUIManager : MonoBehaviour
 
     private void Start()
     {
+        sceneLoadManager = FindObjectOfType<SceneLoadManager_test>();
         scorePopupText.gameObject.SetActive(false);
     }
 
@@ -39,12 +45,16 @@ public class ScoreUIManager : MonoBehaviour
             if (playerScore == 7)
             {
                 scorePopupText.text = ("YOU WIN");
+                isWin = gameresults.win;
             }
             else
             {
+                isWin = gameresults.lose;
                 scorePopupText.text = ("YOU LOSE");
             }
             yield return new WaitForSeconds(delayDuration);
+            yield return StartCoroutine(sceneLoadManager.GameResultLoader(isWin));
+
         }
 
         scorePopupText.gameObject.SetActive(false);
