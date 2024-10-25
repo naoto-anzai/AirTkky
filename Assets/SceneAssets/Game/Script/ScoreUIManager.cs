@@ -67,6 +67,10 @@ public class ScoreUIManager : MonoBehaviour
             }
             yield return new WaitForSeconds(delayDuration);
             sceneLoadManager.ToEndings(isWin);
+        } else if (playerScore == 6 || enemyScore == 6)
+        {
+            scorePopupText.text = ("MATCH POINT");
+            yield return new WaitForSeconds(delayDuration);
         }
 
         scorePopupText.gameObject.SetActive(false);
