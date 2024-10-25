@@ -41,6 +41,9 @@ public class IntroDialogueManager : MonoBehaviour
     [SerializeField] float nextTriangleSpeed;
     [SerializeField] float nextTriangleTravelDistance;
     [SerializeField] string nextSceneName;
+    [SerializeField] List<Texture> background;
+    [SerializeField] List<GameObject> sprites;
+    [SerializeField] List<Vector3> moveTo;
 
     TextMeshProUGUI charactorNameText;
     TextMeshProUGUI dialogueText;
