@@ -1,1 +1,67 @@
-{"count":1,"self":155.790976,"total":156.55018049999998,"children":{"InitializeActuators":{"count":1,"self":0.0030009,"total":0.0030009,"children":null},"InitializeSensors":{"count":1,"self":0.002538,"total":0.002538,"children":null},"AgentSendState":{"count":4112,"self":0.0254041,"total":0.058451499999999997,"children":{"CollectObservations":{"count":206,"self":0.0025793,"total":0.0025793,"children":null},"WriteActionMask":{"count":206,"self":0,"total":0,"children":null},"RequestDecision":{"count":206,"self":0.030468099999999998,"total":0.030468099999999998,"children":null}}},"DecideAction":{"count":4112,"self":0.5547105,"total":0.5547105,"children":null},"AgentAct":{"count":4112,"self":0.1405023,"total":0.1405023,"children":null}},"gauges":{},"metadata":{"timer_format_version":"0.1.0","start_time_seconds":"1729835469","unity_version":"2022.3.27f1","command_line_arguments":"C:\\Program Files\\Unity\\Hub\\Editor\\2022.3.27f1\\Editor\\Unity.exe -projectpath C:\\dev\\unity\\AirTkky -useHub -hubIPC -cloudEnvironment production -licensingIpc LicenseClient-matsu -hubSessionId 950c01c0-9291-11ef-bd59-b1aa91ade7bf","communication_protocol_version":"1.5.0","com.unity.ml-agents_version":"2.0.1","scene_name":"Intro","end_time_seconds":"1729835626"}}
+{
+    "count": 1,
+    "self": 155.790976,
+    "total": 156.55018049999998,
+    "children": {
+        "InitializeActuators": {
+            "count": 1,
+            "self": 0.0030009,
+            "total": 0.0030009,
+            "children": null
+        },
+        "InitializeSensors": {
+            "count": 1,
+            "self": 0.002538,
+            "total": 0.002538,
+            "children": null
+        },
+        "AgentSendState": {
+            "count": 4112,
+            "self": 0.0254041,
+            "total": 0.058451499999999997,
+            "children": {
+                "CollectObservations": {
+                    "count": 206,
+                    "self": 0.0025793,
+                    "total": 0.0025793,
+                    "children": null
+                },
+                "WriteActionMask": {
+                    "count": 206,
+                    "self": 0,
+                    "total": 0,
+                    "children": null
+                },
+                "RequestDecision": {
+                    "count": 206,
+                    "self": 0.030468099999999998,
+                    "total": 0.030468099999999998,
+                    "children": null
+                }
+            }
+        },
+        "DecideAction": {
+            "count": 4112,
+            "self": 0.5547105,
+            "total": 0.5547105,
+            "children": null
+        },
+        "AgentAct": {
+            "count": 4112,
+            "self": 0.1405023,
+            "total": 0.1405023,
+            "children": null
+        }
+    },
+    "gauges": {},
+    "metadata": {
+        "timer_format_version": "0.1.0",
+        "start_time_seconds": "1729835469",
+        "unity_version": "2022.3.27f1",
+        "command_line_arguments": "C:\\Program Files\\Unity\\Hub\\Editor\\2022.3.27f1\\Editor\\Unity.exe -projectpath C:\\dev\\unity\\AirTkky -useHub -hubIPC -cloudEnvironment production -licensingIpc LicenseClient-matsu -hubSessionId 950c01c0-9291-11ef-bd59-b1aa91ade7bf",
+        "communication_protocol_version": "1.5.0",
+        "com.unity.ml-agents_version": "2.0.1",
+        "scene_name": "Intro",
+        "end_time_seconds": "1729835626"
+    }
+}
