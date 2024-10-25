@@ -55,7 +55,7 @@ public class ScoreUIManager : MonoBehaviour
                 isWin = gameresults.win;
                 if(enemyScore == 0)
                 {
-                    isWin = gameresults.special;
+                    isWin = gameresults.win;
                 }
                 cotacky.GetComponent<SpriteRenderer>().sprite = cotackyLose;
             }
