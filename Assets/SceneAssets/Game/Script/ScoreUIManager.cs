@@ -53,7 +53,7 @@ public class ScoreUIManager : MonoBehaviour
                 scorePopupText.text = ("YOU LOSE");
             }
             yield return new WaitForSeconds(delayDuration);
-            yield return StartCoroutine(sceneLoadManager.GameResultLoader(isWin));
+            yield return StartCoroutine(sceneLoadManager.ResultLoader(isWin));
 
         }
 
