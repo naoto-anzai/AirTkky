@@ -16,6 +16,10 @@ public class ScoreUIManager : MonoBehaviour
 
     SceneLoadManager sceneLoadManager;
 
+    [SerializeField] GameObject cotacky;
+    [SerializeField] Sprite cotackyWin;
+    [SerializeField] Sprite cotackyLose;
+
     private void Awake()
     {
         if (scorePopupText == null)
@@ -46,11 +50,13 @@ public class ScoreUIManager : MonoBehaviour
             {
                 scorePopupText.text = ("YOU WIN");
                 isWin = gameresults.win;
+                cotacky.GetComponent<SpriteRenderer>().sprite = cotackyLose;
             }
             else
             {
                 isWin = gameresults.lose;
                 scorePopupText.text = ("YOU LOSE");
+                cotacky.GetComponent<SpriteRenderer>().sprite = cotackyWin;
             }
             yield return new WaitForSeconds(delayDuration);
             StartCoroutine(sceneLoadManager.ToResultSequenser());
