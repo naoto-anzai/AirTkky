@@ -85,19 +85,27 @@
         },{
             "id": 17,
             "characterName": "S",
-            "dialogue": "力なくその場に倒れこむと、コタッキーが指を鳴らすと同時に元居た場所に立っていた。"
+            "dialogue": "俺は力なくその場に倒れこんだ"
         },{
             "id": 18,
-            "characterName": "　　",
-            "dialogue": "はいどうも、高専中退系YoutuberのH〇KAK〇Nです！！！結局就職も進学も\n失敗した俺は、Youtuberになった。"
+            "characterName": "S",
+            "dialogue": "パチッ_______"
         },{
             "id": 19,
             "characterName": "　　",
-            "dialogue": "今では高専という目新しいジャンルや、たこ焼きチェーン店でのバイト経験、ヒューマンビートボックスなどが大ウケした結果、"
+            "dialogue": "___「はいどうも、高専中退系YoutuberのH〇KAK〇Nです！！！」__"
         },{
             "id": 20,
             "characterName": "　　",
-            "dialogue": "チャンネル登録者は1000000000000000億万人になった。みんなもYoutube、始めよう!!"
+            "dialogue": "___結局就職も進学も失敗した俺は、Youtuberになった。"
+        },{
+            "id": 21,
+            "characterName": "　　",
+            "dialogue": "___今では高専という目新しいジャンルや、たこ焼きチェーン店でのバイト経験、\nヒューマンビートボックスなどが大ウケした結果、"
+        },{
+            "id": 22,
+            "characterName": "　　",
+            "dialogue": "___チャンネル登録者は1000000000000000億万人になった。\nみんなもYoutube、始めよう!!"
         }
     ]
 }
