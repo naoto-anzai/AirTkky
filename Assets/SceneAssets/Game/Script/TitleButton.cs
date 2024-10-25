@@ -10,6 +10,6 @@ public class TitleButton : MonoBehaviour
 {
     public void LoadPrologueScene()
     {
-        SceneManager.LoadSceneAsync(scenenames_test.prologue_test);
+        SceneManager.LoadSceneAsync(scenenames.prologue);
     }
 }

@@ -49,6 +49,10 @@ public class IntroDialogueManager : MonoBehaviour
     int dialogueCharNow = 0;
     bool waitingForChoice = false;
 
+
+    // ANSI•ÏX•”•ª
+    ToGameButton toGameButton;
+
     void LoadAllDialogues()
     {
         charactorNameText = CharactorNameGameObject.GetComponentInChildren<TextMeshProUGUI>();
@@ -99,6 +103,10 @@ public class IntroDialogueManager : MonoBehaviour
         {
             if (dialogueNext == null)
             {
+                // ANSI•ÏX•”•ª
+                toGameButton.LoadGameScene();
+
+
                 Debug.Log("End of scenario.");
                 return;
             }
@@ -140,6 +148,10 @@ public class IntroDialogueManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // ANSI •ÏX•”•ª
+        toGameButton = FindObjectOfType<ToGameButton>();
+
+
         choiceBox.SetActive(false);
         LoadAllDialogues();
         UpdateDialogue();

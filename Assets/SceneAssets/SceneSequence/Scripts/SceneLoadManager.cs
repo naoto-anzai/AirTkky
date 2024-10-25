@@ -6,19 +6,9 @@ using System.Diagnostics;
 using UnityEngine.SceneManagement;
 using GameStates;
 
-public class SceneLoadManager_test : MonoBehaviour
+public class SceneLoadManager : MonoBehaviour
 {
 
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     public IEnumerator ToPrologueSequenser() 
     { 
         yield return StartCoroutine(SceneLoader(scenenames_test.prologue_test));

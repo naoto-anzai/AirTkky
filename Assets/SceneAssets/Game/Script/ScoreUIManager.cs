@@ -14,7 +14,7 @@ public class ScoreUIManager : MonoBehaviour
 
     private gameresults isWin;
 
-    SceneLoadManager_test sceneLoadManager;
+    SceneLoadManager sceneLoadManager;
 
     private void Awake()
     {
@@ -26,7 +26,7 @@ public class ScoreUIManager : MonoBehaviour
 
     private void Start()
     {
-        sceneLoadManager = FindObjectOfType<SceneLoadManager_test>();
+        sceneLoadManager = FindObjectOfType<SceneLoadManager>();
         scorePopupText.gameObject.SetActive(false);
     }
 
