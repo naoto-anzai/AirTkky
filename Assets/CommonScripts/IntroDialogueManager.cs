@@ -4,6 +4,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using DG.Tweening;
+using UnityEngine.SceneManagement;
 
 public class IntroDialogueManager : MonoBehaviour
 {
@@ -39,6 +40,10 @@ public class IntroDialogueManager : MonoBehaviour
     [SerializeField] float typeSpeed = 0.1f;
     [SerializeField] float nextTriangleSpeed;
     [SerializeField] float nextTriangleTravelDistance;
+    [SerializeField] string nextSceneName;
+    [SerializeField] List<Texture> background;
+    [SerializeField] List<GameObject> sprites;
+    [SerializeField] List<Vector3> moveTo;
 
     TextMeshProUGUI charactorNameText;
     TextMeshProUGUI dialogueText;
@@ -48,6 +53,7 @@ public class IntroDialogueManager : MonoBehaviour
     int dialogueIdNext = 1;
     int dialogueCharNow = 0;
     bool waitingForChoice = false;
+
 
     void LoadAllDialogues()
     {
@@ -99,6 +105,8 @@ public class IntroDialogueManager : MonoBehaviour
         {
             if (dialogueNext == null)
             {
+                SceneManager.LoadScene(nextSceneName);
+
                 Debug.Log("End of scenario.");
                 return;
             }

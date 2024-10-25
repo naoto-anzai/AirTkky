@@ -15,11 +15,15 @@ public class pack_game_manager : MonoBehaviour
     public Vector3 InitializedPos;
     Rigidbody myRigidbody;
 
+    [SerializeField] AudioManager audioManager;
+
     // Start is called before the first frame update
     void Start()
     {
         InitializedPos = transform.position;
         myRigidbody = GetComponent<Rigidbody>();
+        StartInitialize();
+
     }
     //得点後にパックの位置を初期化
     public void StartRalley(players turn)
@@ -39,5 +43,20 @@ public class pack_game_manager : MonoBehaviour
         {
             myRigidbody.velocity = myRigidbody.velocity.normalized * maxSpeed;
         }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.name == "GND") return;
+        audioManager.PlayClackSound();
+    }
+
+    // InitPosを定義後に呼ぶ
+    void StartInitialize()
+    {
+        this.transform.localPosition
+            = new Vector3(this.transform.localPosition.x,
+                           this.transform.localPosition.y,
+                           this.transform.localPosition.z - offset);
     }
 }

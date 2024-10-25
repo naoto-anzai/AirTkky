@@ -4,33 +4,38 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
-    [SerializeField] AudioSource bgmSource;
-    [SerializeField] AudioSource scoreSESource;
-    [SerializeField] AudioSource loseScoreSESource;
-
     [SerializeField] AudioClip bgm;
     [SerializeField] AudioClip scoreSE;
     [SerializeField] AudioClip loseScoreSE;
+    [SerializeField] AudioClip clack;
+
+    AudioSource audioSource;
 
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         PlayBGM();
     }
 
     public void PlayBGM()
     {
-        bgmSource.clip = bgm;
-        bgmSource.loop = true;
-        bgmSource.Play();
+        audioSource.clip = bgm;
+        audioSource.loop = true;
+        audioSource.Play();
     }
 
     public void PlayWhenScored()
     {
-        scoreSESource.PlayOneShot(scoreSE);
+        audioSource.PlayOneShot(scoreSE);
     }
 
     public void PlayWhenLost()
     {
-        loseScoreSESource.PlayOneShot(loseScoreSE);
+        audioSource.PlayOneShot(loseScoreSE);
+    }
+
+    public void PlayClackSound()
+    {
+        audioSource.PlayOneShot(clack);
     }
 }

@@ -32,11 +32,6 @@
 		{
 			"id": 7,
             "dialogue": "パチっ"
-        },
-		{
-            "id": 8,
-            "characterName": "__Coment",
-            "dialogue": "---ここでScene移動して、チュートリアル開始"
         }
     ]
 }

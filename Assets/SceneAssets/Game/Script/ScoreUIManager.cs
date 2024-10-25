@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using GameStates;
 
 public class ScoreUIManager : MonoBehaviour
 {
@@ -11,11 +12,23 @@ public class ScoreUIManager : MonoBehaviour
     [SerializeField] float delayDuration;
     [SerializeField] TextMeshProUGUI scorePopupText;
 
+    private gameresults isWin;
+
+    [SerializeField] SceneLoadManager sceneLoadManager;
+
+    [SerializeField] GameObject cotacky;
+    [SerializeField] Sprite cotackyWin;
+    [SerializeField] Sprite cotackyLose;
+
     private void Awake()
     {
         if (scorePopupText == null)
         {
             scorePopupText = GameObject.Find("ScorePopup").GetComponent<TextMeshProUGUI>();
+        }
+        if (scorePopupText == null)
+        {
+            sceneLoadManager = GameObject.Find("SceneLoadManager").GetComponent<SceneLoadManager>();
         }
     }
 
@@ -39,12 +52,21 @@ public class ScoreUIManager : MonoBehaviour
             if (playerScore == 7)
             {
                 scorePopupText.text = ("YOU WIN");
+                isWin = gameresults.win;
+                if(enemyScore == 0)
+                {
+                    isWin = gameresults.win;
+                }
+                cotacky.GetComponent<SpriteRenderer>().sprite = cotackyLose;
             }
             else
             {
+                isWin = gameresults.lose;
                 scorePopupText.text = ("YOU LOSE");
+                cotacky.GetComponent<SpriteRenderer>().sprite = cotackyWin;
             }
             yield return new WaitForSeconds(delayDuration);
+            sceneLoadManager.ToEndings(isWin);
         }
 
         scorePopupText.gameObject.SetActive(false);
