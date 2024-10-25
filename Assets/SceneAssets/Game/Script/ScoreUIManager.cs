@@ -11,6 +11,10 @@ public class ScoreUIManager : MonoBehaviour
     [SerializeField] float delayDuration;
     [SerializeField] TextMeshProUGUI scorePopupText;
 
+    [SerializeField] GameObject cotacky;
+    [SerializeField] Sprite cotackyWin;
+    [SerializeField] Sprite cotackyLose;
+
     private void Awake()
     {
         if (scorePopupText == null)
@@ -39,10 +43,12 @@ public class ScoreUIManager : MonoBehaviour
             if (playerScore == 7)
             {
                 scorePopupText.text = ("YOU WIN");
+                cotacky.GetComponent<SpriteRenderer>().sprite = cotackyLose;
             }
             else
             {
                 scorePopupText.text = ("YOU LOSE");
+                cotacky.GetComponent<SpriteRenderer>().sprite = cotackyWin;
             }
             yield return new WaitForSeconds(delayDuration);
         }
