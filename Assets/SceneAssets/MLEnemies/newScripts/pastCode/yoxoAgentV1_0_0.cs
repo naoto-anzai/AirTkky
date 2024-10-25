@@ -24,6 +24,7 @@ public class yoxoAgentV1_0_0 : Agent
     public Transform Target;
     public override void OnEpisodeBegin()
     {
+        MLManager.setTime(10f);
     }
 
     public override void CollectObservations(VectorSensor sensor)
