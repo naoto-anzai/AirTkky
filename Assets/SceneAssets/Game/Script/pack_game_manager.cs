@@ -22,6 +22,8 @@ public class pack_game_manager : MonoBehaviour
     {
         InitializedPos = transform.position;
         myRigidbody = GetComponent<Rigidbody>();
+        StartInitialize();
+
     }
     //得点後にパックの位置を初期化
     public void StartRalley(players turn)
@@ -47,5 +49,14 @@ public class pack_game_manager : MonoBehaviour
     {
         if (collision.gameObject.name == "GND") return;
         audioManager.PlayClackSound();
+    }
+
+    // InitPosを定義後に呼ぶ
+    void StartInitialize()
+    {
+        this.transform.localPosition
+            = new Vector3(this.transform.localPosition.x,
+                           this.transform.localPosition.y,
+                           this.transform.localPosition.z - offset);
     }
 }
