@@ -2,11 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using System.Diagnostics;
+using GameStates;
 
-public class TitleButtons : MonoBehaviour
+public class TitleButton : MonoBehaviour
 {
-    public void StartBtn()
+    public void LoadPrologueScene()
     {
-        SceneManager.LoadScene("Game");
+        SceneManager.LoadSceneAsync(scenenames_test.prologue_test);
     }
 }

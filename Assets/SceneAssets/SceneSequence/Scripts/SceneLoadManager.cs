@@ -25,16 +25,9 @@ public class SceneLoadManager_test : MonoBehaviour
     }
 
 
-    public IEnumerator ResultLoader(gameresults isWin) 
-    { 
-        if (isWin == gameresults.win)
-        {
-            yield return SceneLoader(scenenames_test.endingwin_test);
-        }
-        else if (isWin == gameresults.lose)
-        {
-            yield return SceneLoader(scenenames_test.endinglose_test);
-        }
+    public IEnumerator ToResultSequenser() 
+    {     
+        yield return StartCoroutine(SceneLoader(scenenames_test.result_test));
     }
         
     

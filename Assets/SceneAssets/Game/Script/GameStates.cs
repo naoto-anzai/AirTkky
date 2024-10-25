@@ -21,7 +21,7 @@ namespace GameStates
         public const string intro_test         = "Intro_test";
         public const string instruction_test   = "Instruction_test";
         public const string game_test          = "Game_test";
-        public const string result             = "Result_test";
+        public const string result_test        = "Result_test";
         public const string endingwin_test     = "Endings_test/EndingWin_test";
         public const string endinglose_test    = "Endings_test/EndingLose_test";
         public const string endingspecial_test = "Endings_test/EndingSpecials_test";
