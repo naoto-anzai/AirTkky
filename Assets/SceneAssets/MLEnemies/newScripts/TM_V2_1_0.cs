@@ -16,9 +16,6 @@ public class TM_V2_1_0 : Agent
     public float Outline = -2.3f;
     public float MaxDynaToReward = 1;
 
-    int isSwitch = 0;
-    int count = 0;
-
     public int MaxCount = 0;
 
     public float time_limit = 0f;
@@ -42,13 +39,10 @@ public class TM_V2_1_0 : Agent
 
         TargetInitPos = Target.localPosition;
         AgentInitPos = Agent.localPosition;
-
-        count = 0;
     }
 
     public override void OnEpisodeBegin()
     {
-        count++;
         // ‚à‚ë‚à‚ë‚Ì‰Šú‰»
         time_limit = 0f;
 
