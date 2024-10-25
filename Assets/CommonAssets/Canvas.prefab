@@ -482,7 +482,7 @@ MonoBehaviour:
   choiceButton: {fileID: 7072660384208373964, guid: d27aa10aca70beb43a165374bf9e8638, type: 3}
   nextTriangle: {fileID: 4010953545876725143}
   dialogueJsonName: scenario_template
-  typeSpeed: 0.065
+  typeSpeed: 0.06
   nextTriangleSpeed: 0.5
   nextTriangleTravelDistance: 20
 --- !u!1 &3991892522635204152
