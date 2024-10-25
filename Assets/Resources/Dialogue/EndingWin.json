@@ -1,0 +1,151 @@
+{
+    "scenario": [
+        {
+            "id": 1,
+            "characterName": "コタッキー",
+            "dialogue": "ぐうぅ…見誤っていた。\nこれほどまでの学力とは…"
+        },
+        {
+            "id": 2,
+            "characterName": "P",
+            "dialogue": "(俺)の勝ちだ!!奪った単位をかえしやがれ!!"
+        },
+        {
+            "id": 3,
+            "characterName": "S",
+            "dialogue": "突然、辺りの空気が凍るようなプレッシャーを\n背中から感じた。"
+        },
+        {
+            "id": 4,
+            "characterName": "コタッキー",
+            "dialogue": "あ、あなた様は!!どうしてこちらへ!?"
+        },
+        {
+            "id": 5,
+            "characterName": "S",
+            "dialogue": "振り向くとそこには、純白の羽と輝く光輪を\n持つ、いわば天使のような姿の男がたっていた。"
+        },
+        {
+            "id": 6,
+            "characterName": "滝沢",
+            "dialogue": " まさかコタッキーに勝つ人間が現れるとはね。驚いたよ。"
+        },
+        {
+            "id": 7,
+            "characterName": "P",
+            "dialogue": " お、お前は一体…"
+        },{
+            "id": 8,
+            "characterName": "滝沢",
+            "dialogue": " 自己紹介が遅れたね。僕は滝沢陽三。この天界の管理を任されている。このバトルフィールドはコタッキーに管理を任せているんだけど、試験運用のシステムにクリア者がでるとこうしてチャレンジャーを褒めにくるんだ"
+        },{
+            "id": 9,
+            "characterName": "P",
+            "dialogue": " (なんだこの男の圧力とマシンガントークは…)"
+        },{
+            "id": 10,
+            "characterName": "滝沢",
+            "dialogue": "約束通り、君の単位は返そうと思うんだけど、\nいい提案があるんだ。ちょっとだけ聞いてよ。"
+        },{
+            "id": 11,
+            "characterName": "S",
+            "dialogue": " 近未来的な音とともに、天使の光輪のような\nものが滝沢の手元に現れた。"
+        },{
+            "id": 12,
+            "characterName": "滝沢",
+            "dialogue": " 実は天使候補を随時募集しててね。システムの試用にまだまだ人手が足りてないんだ。高専卒業までは天使になっててもらうけど、進学・就職で高専卒業と同じ扱いになるから安心してね"
+        },{
+            "id": 13,
+            "characterName": "P",
+            "dialogue": " (なんなんださっきから…天使になる、だって？)",
+            "choices":[
+                {
+
+                    "text":"その話、乗った!!",
+                    "nextDialogueId":14
+                },
+                {
+                    "text":"断らせてもらう。",
+                    "nextDialogueId":23
+                }
+            ]
+        },{
+            "id": 14,
+            "characterName": "滝沢",
+            "dialogue": " わかった、じゃあここにサインしてね"
+        },{
+            "id": 15,
+            "characterName": "P",
+            "dialogue": " 分かった"
+        },{
+            "id": 16,
+            "characterName": "S",
+            "dialogue": "書き終えると、天使の輪が自分の頭上へと\n動き出した "
+        },{
+            "id": 17,
+            "characterName": "滝沢",
+            "dialogue": "羽は後で生えてくるからね、詳しいことは\nコタッキーに聞いてね"
+        },{
+            "id": 18,
+            "characterName": "P",
+            "dialogue": "さて、これから5年、頑張るか…"
+        },{
+            "id": 19,
+            "characterName": "　　",
+            "dialogue": "天界の従者としての仕事は難しくなく、エアホッケーをやるだけで安寧が確保された。現世に戻ってきた際も、卒業式の前日に戻ってこれたし、"
+        },{
+            "id": 20,
+            "characterName": "　　",
+            "dialogue": "就職先も超一流企業だった。さらに数年後、朝起きると枕元に手紙が置いてあった。「資格は頂いた。そこでお前にはボウリングによって"
+        },{
+            "id": 21,
+            "characterName": "　　",
+            "dialogue": " 学力を測定する新技術を試してもらう。\nボウリングで優秀な成績を修めた暁には、資格を返してやろう。」",
+            "nextDialogueId":-1
+        },{
+            "id": 22,
+            "characterName": "滝沢",
+            "dialogue": "う～ん、じゃあしょうがないかな～ "
+        },{
+            "id": 23,
+            "characterName": "P",
+            "dialogue": " 単位を返して、元の場所に戻してくれ"
+        },{
+            "id": 24,
+            "characterName": "滝沢",
+            "dialogue": " わかった。コタッキー、頼むよ"
+        },{
+            "id": 25,
+            "characterName": "コタッキー",
+            "dialogue": " わかりました"
+        },{
+            "id": 26,
+            "characterName": "S",
+            "dialogue": " 体が浮くような感覚のあと、元居た場所に\n戻ってきた。"
+        },{
+            "id": 27,
+            "characterName": "コタッキー",
+            "dialogue": " ほら、これで全部元通りなハズだ"
+        },{
+            "id": 28,
+            "characterName": "P",
+            "dialogue": " 二度と俺に関わるなよ！！"
+        },{
+            "id": 29,
+            "characterName": "コタッキー",
+            "dialogue": " 最後に一個、忠告しておく。滝沢様があんなにすんなりと終わるわけがない。気をつけろ。"
+        },{
+            "id": 30,
+            "characterName": "　　",
+            "dialogue": " 翌日・・・"
+        },{
+            "id": 31,
+            "characterName": "　　",
+            "dialogue": " 天界高専からの転校生だ。\nみんな、仲良くしてやってくれ。"
+        },{
+            "id": 32,
+            "characterName": "滝沢",
+            "dialogue": " 滝沢です。みんなよろしくお願いします。"
+        }
+    ]
+}

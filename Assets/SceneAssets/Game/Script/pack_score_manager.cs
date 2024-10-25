@@ -7,6 +7,8 @@ namespace PackScoreManager
 {
     public class pack_score_manager : MonoBehaviour
     {
+        [SerializeField] AudioManager audioManager;
+
         public int score_player = 0; 
         public int score_enemy = 0; 
 
@@ -33,6 +35,8 @@ namespace PackScoreManager
             {
                 SendToWorldEnd();
                 score_player += 1;
+                audioManager.PlayWhenScored();
+
                 yield return StartCoroutine(scoreUIManager.UpdateScore(score_player, score_enemy));
                 if (score_player == 7) yield break;
                 PackGameManager.StartRalley(players.player);
@@ -43,6 +47,8 @@ namespace PackScoreManager
             {
                 SendToWorldEnd();
                 score_enemy += 1;
+                audioManager.PlayWhenLost();
+
                 yield return StartCoroutine(scoreUIManager.UpdateScore(score_player, score_enemy));
                 if (score_enemy == 7) yield break;
                 PackGameManager.StartRalley(players.enemy);
