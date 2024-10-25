@@ -14,6 +14,7 @@ public class AudioManager : MonoBehaviour
 
     void Start()
     {
+        Debug.Log(gameObject.name);
         PlayBGM();
     }
 
