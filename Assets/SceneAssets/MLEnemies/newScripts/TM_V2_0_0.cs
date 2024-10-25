@@ -14,8 +14,6 @@ public class TM_V2_0_0 : Agent
     public float Xlifeline = 0.4f;
     public float Outline = -2.3f;
 
-    int isSwitch = 0;
-
     public float time_limit = 0f; 
     public float time_limit_behind = 3f;
 
