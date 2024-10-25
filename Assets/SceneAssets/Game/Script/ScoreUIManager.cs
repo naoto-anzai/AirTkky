@@ -14,7 +14,7 @@ public class ScoreUIManager : MonoBehaviour
 
     private gameresults isWin;
 
-    SceneLoadManager sceneLoadManager;
+    [SerializeField] SceneLoadManager sceneLoadManager;
 
     [SerializeField] GameObject cotacky;
     [SerializeField] Sprite cotackyWin;
@@ -26,11 +26,14 @@ public class ScoreUIManager : MonoBehaviour
         {
             scorePopupText = GameObject.Find("ScorePopup").GetComponent<TextMeshProUGUI>();
         }
+        if (scorePopupText == null)
+        {
+            sceneLoadManager = GameObject.Find("SceneLoadManager").GetComponent<SceneLoadManager>();
+        }
     }
 
     private void Start()
     {
-        sceneLoadManager = FindObjectOfType<SceneLoadManager>();
         scorePopupText.gameObject.SetActive(false);
     }
 
@@ -50,6 +53,10 @@ public class ScoreUIManager : MonoBehaviour
             {
                 scorePopupText.text = ("YOU WIN");
                 isWin = gameresults.win;
+                if(enemyScore == 0)
+                {
+                    isWin = gameresults.special;
+                }
                 cotacky.GetComponent<SpriteRenderer>().sprite = cotackyLose;
             }
             else
@@ -59,8 +66,7 @@ public class ScoreUIManager : MonoBehaviour
                 cotacky.GetComponent<SpriteRenderer>().sprite = cotackyWin;
             }
             yield return new WaitForSeconds(delayDuration);
-            StartCoroutine(sceneLoadManager.ToResultSequenser());
-
+            sceneLoadManager.ToEndings(isWin);
         }
 
         scorePopupText.gameObject.SetActive(false);

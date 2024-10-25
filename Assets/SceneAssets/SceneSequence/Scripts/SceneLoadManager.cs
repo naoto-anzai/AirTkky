@@ -31,4 +31,19 @@ public class SceneLoadManager : MonoBehaviour
         }
 
     }
+    public void ToEndings(gameresults isWin)
+    {
+        if(isWin == gameresults.win)
+        {
+            SceneManager.LoadSceneAsync(scenenames.endinglose);
+        }
+        if(isWin == gameresults.lose)
+        {
+            SceneManager.LoadSceneAsync(scenenames.endingwin);
+        }
+        if(isWin == gameresults.special)
+        {
+            SceneManager.LoadSceneAsync(scenenames.endingspecial);
+        }
+    }
 }

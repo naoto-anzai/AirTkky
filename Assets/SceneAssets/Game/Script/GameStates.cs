@@ -12,7 +12,8 @@ namespace GameStates
     public enum gameresults
     {
         win,
-        lose
+        lose,
+        special
     }
     public static class scenenames_test
     {
@@ -35,9 +36,9 @@ namespace GameStates
         public const string instruction   = "Instruction";
         public const string game          = "Game";
         public const string result        = "Result";
-        public const string endingwin     = "Endings/EndingWin";
-        public const string endinglose    = "Endings/EndingLose";
-        public const string endingspecial = "Endings/EndingSpecials";
+        public const string endingwin     = "EndingWin";
+        public const string endinglose    = "EndingLose";
+        public const string endingspecial = "EndingSpecials";
         public const string outro         = "Outro";
     }
 }
