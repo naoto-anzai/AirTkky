@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using PackScoreManager;
 
 public class RestartRally : MonoBehaviour
 {
@@ -20,8 +21,15 @@ public class RestartRally : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            inputField.text = "";
-            popUp.SetActive(true);
+            if(popUp.activeInHierarchy == false)
+            {
+                inputField.text = "";
+                popUp.SetActive(true);
+            }
+            else
+            {
+                popUp.SetActive(false);
+            }
         }
     }
 }
