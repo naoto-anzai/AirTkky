@@ -8,8 +8,12 @@ using GameStates;
 
 public class ToIntroButton : MonoBehaviour
 {
+    [SerializeField] ButtonSEManager buttonSEManager;
+
     public void LoadIntroScene()
     {
+        buttonSEManager = ButtonSEManager.Instance;
+        buttonSEManager.PlayWhenClick();
         SceneManager.LoadSceneAsync(scenenames.intro);
     }
 }

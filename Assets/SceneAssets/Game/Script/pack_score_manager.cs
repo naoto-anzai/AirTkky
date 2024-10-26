@@ -7,7 +7,7 @@ namespace PackScoreManager
 {
     public class pack_score_manager : MonoBehaviour
     {
-        [SerializeField] AudioManager audioManager;
+        [SerializeField] GameAudioManager audioManager;
 
         public int score_player = 0; 
         public int score_enemy = 0; 

@@ -15,7 +15,7 @@ public class pack_game_manager : MonoBehaviour
     public Vector3 InitializedPos;
     Rigidbody myRigidbody;
 
-    [SerializeField] AudioManager audioManager;
+    [SerializeField] GameAudioManager audioManager;
 
     // Start is called before the first frame update
     void Start()

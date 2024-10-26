@@ -69,7 +69,7 @@ public class ScoreUIManager : MonoBehaviour
             sceneLoadManager.ToEndings(isWin);
         } else if (playerScore == 6 || enemyScore == 6)
         {
-            scorePopupText.text = ("MATCH POINT");
+            scorePopupText.text = ("マッチポイント");
             yield return new WaitForSeconds(delayDuration);
         }
 
