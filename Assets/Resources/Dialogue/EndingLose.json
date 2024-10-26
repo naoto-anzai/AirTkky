@@ -7,22 +7,21 @@
         },
         {
             "id": 2,
-            "characterName": "S",
             "dialogue": "コタッキーは背を向け、\n一切こちらを見ずに歩き始める"
         },
         {
             "id": 3,
-            "characterName": "P",
+            "characterName": "あなた",
             "dialogue": "(お、俺の)単位をかえせぇぇぇぇ！！！！！"
         },
         {
             "id": 4,
-            "characterName": "S",
+            
             "dialogue": "コタッキーの背中に追いすがろうとした\nすると、手元に何かが触れた。"
         },
         {
             "id": 5,
-            "characterName": "P",
+            "characterName": "あなた",
             "dialogue": "こ、これなら…",
             "choices":[
                 {
@@ -38,16 +37,16 @@
         },
         {
             "id": 6,
-            "characterName": "P",
+            "characterName": "あなた",
             "dialogue": " これでも、くらえぇぇぇぇぇぇぇぇ！！！！"
         },
         {
             "id": 7,
-            "characterName": "S",
+            
             "dialogue": " 手元に落ちていたロケットランチャーを\nコタッキーの背中めがけてぶっ放した。"
         },{
             "id": 8,
-            "characterName": "　　",
+            
             "dialogue": " 爆発音"
         },{
             "id": 9,
@@ -55,57 +54,57 @@
             "dialogue": "ぎゃああああああああ！！！！"
         },{
             "id": 10,
-            "characterName": "S",
+            
             "dialogue": "けたたましい音とともに、\nフィールドが崩壊した。"
         },{
             "id": 11,
-            "characterName": "P",
+            "characterName": "あなた",
             "dialogue": " ざまぁみやがれってんだよ！！"
         },{
             "id": 12,
-            "characterName": "S",
+            
             "dialogue": " 辺りを見回すと、元居た場所だった。\n時計を確認すると、来た時間と全く同じだった"
         },{
             "id": 13,
-            "characterName": "P",
+            "characterName": "あなた",
             "dialogue": " あっ…そういえば月曜日に提出の課題終わってねぇ!!どう頑張っても3日はかかるっていうのに!!"
         },{
             "id": 14,
-            "characterName": "P",
+            "characterName": "あなた",
             "dialogue": " 単位もうないけど呼び出しめんどいから\n出すしかねぇ！！！！かくなる上は…"
         },{
             "id": 15,
-            "characterName": "　　",
-            "dialogue": " 高専爆発(例のあれ)　　　やったぜ",
+            
+            "dialogue": " 　や　っ　た　ぜ",
             "nextDialogueId":-1
         },{
             "id": 16,
-            "characterName": "P",
+            "characterName": "あなた",
             "dialogue": "カール・グスタフなんて、打ち方わからねぇよ… "
         },{
             "id": 17,
-            "characterName": "S",
+            
             "dialogue": "俺は力なくその場に倒れこんだ"
         },{
             "id": 18,
-            "characterName": "S",
+            
             "dialogue": "パチッ_______"
         },{
             "id": 19,
-            "characterName": "　　",
-            "dialogue": "___「はいどうも、高専中退系YoutuberのH〇KAK〇Nです！！！」__"
+            
+            "dialogue": "______「はいどうも、高専中退系YoutuberのH〇KAK〇Nです！！！」"
         },{
             "id": 20,
-            "characterName": "　　",
-            "dialogue": "___結局就職も進学も失敗した俺は、Youtuberになった。"
+            
+            "dialogue": "結局就職も進学も失敗した俺は、Youtuberになった。"
         },{
             "id": 21,
-            "characterName": "　　",
-            "dialogue": "___今では高専という目新しいジャンルや、たこ焼きチェーン店でのバイト経験、\nヒューマンビートボックスなどが大ウケした結果、"
+            
+            "dialogue": "今では高専という目新しいジャンルや、たこ焼きチェーン店でのバイト経験、\nヒューマンビートボックスなどが大ウケした結果、"
         },{
             "id": 22,
-            "characterName": "　　",
-            "dialogue": "___チャンネル登録者は1000000000000000億万人になった。\nみんなもYoutube、始めよう!!"
+            
+            "dialogue": "チャンネル登録者は1000000000000000億万人になった。\nみんなもYoutube、始めよう!!"
         }
     ]
 }
