@@ -25,6 +25,7 @@ public class IntroDialogueManager : MonoBehaviour
         public string dialogue = "";
         public int sprite = UNDEF;
         public int background = UNDEF;
+        public int fontSize = UNDEF;
         public List<Choice> choices;
         public int nextDialogueId;
     }
@@ -41,11 +42,13 @@ public class IntroDialogueManager : MonoBehaviour
     [SerializeField] GameObject choiceButton;
     [SerializeField] GameObject nextTriangle;
     [SerializeField] GameObject sprite; 
-    [SerializeField] GameObject background; 
+    [SerializeField] GameObject background;
+    [SerializeField] TextMeshProUGUI scenarioText;
     [SerializeField] string dialogueJsonName;
     [SerializeField] float typeSpeed = 0.1f;
     [SerializeField] float nextTriangleSpeed;
     [SerializeField] float nextTriangleTravelDistance;
+    [SerializeField] int defaultFontSize = 80;
     [SerializeField] string nextSceneName;
     [SerializeField] List<Sprite> backgrounds;
     [SerializeField] List<Sprite> sprites;
@@ -154,6 +157,8 @@ public class IntroDialogueManager : MonoBehaviour
                     background.GetComponent<SpriteRenderer>().sprite = backgrounds[dialogueNext.background];
                 }
             }
+
+            scenarioText.fontSize = dialogueNext.fontSize==UNDEF ? defaultFontSize : dialogueNext.fontSize;
 
             StartCoroutine(ShowDialogue(dialogueNext.dialogue));
         }
