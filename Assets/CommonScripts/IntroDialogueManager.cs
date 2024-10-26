@@ -8,6 +8,8 @@ using UnityEngine.SceneManagement;
 
 public class IntroDialogueManager : MonoBehaviour
 {
+    const int UNDEF = -77;    
+
     [System.Serializable]
     public class Choice
     {
@@ -21,6 +23,8 @@ public class IntroDialogueManager : MonoBehaviour
         public int id;
         public string characterName = "";
         public string dialogue = "";
+        public int sprite = UNDEF;
+        public int background = UNDEF;
         public List<Choice> choices;
         public int nextDialogueId;
     }
@@ -36,14 +40,15 @@ public class IntroDialogueManager : MonoBehaviour
     [SerializeField] GameObject choiceBox;
     [SerializeField] GameObject choiceButton;
     [SerializeField] GameObject nextTriangle;
+    [SerializeField] GameObject sprite; 
+    [SerializeField] GameObject background; 
     [SerializeField] string dialogueJsonName;
     [SerializeField] float typeSpeed = 0.1f;
     [SerializeField] float nextTriangleSpeed;
     [SerializeField] float nextTriangleTravelDistance;
     [SerializeField] string nextSceneName;
-    [SerializeField] List<Texture> background;
-    [SerializeField] List<GameObject> sprites;
-    [SerializeField] List<Vector3> moveTo;
+    [SerializeField] List<Sprite> backgrounds;
+    [SerializeField] List<Sprite> sprites;
 
     TextMeshProUGUI charactorNameText;
     TextMeshProUGUI dialogueText;
@@ -53,7 +58,6 @@ public class IntroDialogueManager : MonoBehaviour
     int dialogueIdNext = 1;
     int dialogueCharNow = 0;
     bool waitingForChoice = false;
-
 
     void LoadAllDialogues()
     {
@@ -123,6 +127,32 @@ public class IntroDialogueManager : MonoBehaviour
             else
             {
                 dialogueIdNext++;
+            }
+            
+            if(dialogueNext.sprite != UNDEF)
+            {
+                if(dialogueNext.sprite == -1)
+                {
+                    sprite.SetActive(false);
+                }
+                else
+                {
+                    sprite.SetActive(true);
+                    sprite.GetComponent<SpriteRenderer>().sprite = sprites[dialogueNext.sprite];
+                }
+            }
+
+            if(dialogueNext.background != UNDEF)
+            {
+                if(dialogueNext.background == -1)
+                {
+                    background.SetActive(false);
+                }
+                else
+                {
+                    background.SetActive(true);
+                    background.GetComponent<SpriteRenderer>().sprite = backgrounds[dialogueNext.background];
+                }
             }
 
             StartCoroutine(ShowDialogue(dialogueNext.dialogue));
