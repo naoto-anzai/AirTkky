@@ -38,7 +38,7 @@ namespace GameStates
         public const string result        = "Result";
         public const string endingwin     = "EndingWin";
         public const string endinglose    = "EndingLose";
-        public const string endingspecial = "EndingSpecials";
+        public const string endingspecial = "EndingSpecial";
         public const string outro         = "Outro";
     }
 }

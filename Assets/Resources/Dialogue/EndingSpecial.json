@@ -12,79 +12,101 @@
         },
         {
             "id": 3,
-            
+            "sprite": 1,
             "dialogue": "突如、不思議な音が鳴り響き、\n背後から足音が鳴った。"
         },
         {
             "id": 4,
-            "characterName": "滝沢",
+            "characterName": "???",
+            "sprite":1,
+            "fontSize":70,
             "dialogue": "システムがオーバーフロー起こしたんだって？\nコタッキー"
         },
         {
             "id": 5,
             "characterName": "コタッキー",
+            "sprite":2,
             "dialogue": "は、はい！\nこの人間との勝負で測定値が振り切れました！！"
             
         },
         {
             "id": 6,
-            
+            "sprite":1,
             "dialogue": " 謎の男…みたところ、天使の風貌をした男が\nこちらに向き直った。"
         },
         {
             "id": 7,
-            "characterName": "滝沢",
+            "characterName": "???",
+            "sprite":1,
+            "fontSize":70,
             "dialogue": " 君すごいねぇ！僕以外で初めての測定不能、\nおまけに純粋な人間ときたもんだ！！僕と一緒に研究しないかい！？"
         },{
             "id": 8,
             "characterName": "あなた",
+            "sprite":3,
             "dialogue": " は、はぁ…(なんだこいつ…)"
         },{
             "id": 9,
             "characterName": "滝沢",
+            "sprite":3,
+            "fontSize":70,
             "dialogue": "自己紹介が遅れたね。僕は滝沢陽三。この天界の管理を任されている。このバトルフィールドはコタッキーに管理を任せているんだけど、"
         },{
             "id": 10,
             "characterName": "滝沢",
+            "sprite":3,
+            "fontSize":70,
             "dialogue": "試験運用のシステムにクリア者がでるとこうしてチャレンジャーを褒めにくるんだ。でも、今回は褒めるのが目的じゃなくって"
         },{
             "id": 11,
-            
+            "sprite":3,
             "dialogue": " 先ほどまでの友好的な雰囲気ではなく、猟奇的にも思えるような異様な雰囲気を纏う滝沢がこちらに向かってくる"
         },{
             "id": 12,
             "characterName": "滝沢",
+            "sprite":3,
+            "fontSize":70,
             "dialogue": " 僕以外に測定不能がいたなんて！！\nぜひ一緒に研究しよう！！\n悪魔や妖精じゃあ僕の足元にもおよばなくってね！！！"
         },{
             "id": 13,
             "characterName": "あなた",
-            "dialogue": "(見たところ敵意はない、か…でも、)\n断らせてもらう。"
+            "sprite":3,
+            "dialogue": "(見たところ敵意はない、か…でも、)断らせてもらう。"
         },{
             "id": 14,
-            
+            "sprite":3,
             "dialogue": "一瞬の沈黙ののち、静寂を滝沢が破った。"
         },{
             "id": 15,
             "characterName": "滝沢",
+            "sprite":3,
+            "fontSize":70,
             "dialogue": "くっくっくっ、\n僕の誘いを断ったのも君が初めてだよ"
         },{
             "id": 16,
-            
+            "sprite":0,
             "dialogue": "空間がゆがむほどの圧を滝沢が纏い始める "
         },{
             "id": 17,
+            "sprite":1,
             "characterName": "滝沢",
+            "fontSize":70,
             "dialogue": "じゃあ僕と勝負しようか。\n勝てたら、この天界の半分と高専の単位すべてを僕の名のもとに与えよう"
         },{
             "id": 18,
-            
+            "sprite":0,
+            "background": 0,
             "dialogue": "突如、フィールドが変化した"
         },{
             "id": 19,
+            "background": 1,
+            "sprite":3,
+            "fontSize":100,
             "characterName": "滝沢",
             "dialogue": "この宇宙空間で、君を叩き潰そう"
         },{
             "id": 20,
+            "sprite":3,
             "characterName": "あなた",
             "dialogue": "くっ・・・"
         },{
@@ -94,51 +116,70 @@
         },{
             "id": 22,
             "characterName": "滝沢",
+            "sprite":3,
+            "fontSize":100,
             "dialogue": "いくぞ！！！！"
         },{
             "id": 23,
             "characterName": "あなた",
+            "sprite":3,
+            "fontSize":100,
             "dialogue": "やるしかねぇぇぇぇぇ！！！！！！"
         },{
             "id": 24,
             "characterName": "滝沢",
+            "sprite":3,
             "dialogue": "…あれ?"
         },{
             "id": 25,
             
-            "dialogue": "チャンネル登録者は1000000000000000億万人になった。みんなもYoutube、始めよう!!"
+            "dialogue": "始まらなかった。\n真空空間ではエアホッケーなんて成立しないのである。"
         },{
             "id": 26,
             "characterName": "滝沢",
+            "sprite":3,
+            "fontSize":70,
             "dialogue": "しまった！！！仕方ない、場所を変えて…"
         },{
             "id": 27,
-            
+            "sprite":3,
             "dialogue": "しきりに指を鳴らそうとする滝沢だったが、\n音が鳴らない。"
         },{
             "id": 28,
             "characterName": "滝沢",
+            "fontSize":70,
             "dialogue": "どうしよう、\n宇宙じゃ音も重力も空気もないじゃないか！\n帰れないここから帰れない！！！！"
         },{
             "id": 29,
-            "characterName": "コタッキー",
-            "dialogue": "危なかったな(お前)。\nあのまま宇宙にいたらどうなってたか。"
+            "sprite":0,
+            "background":0,
+            "dialogue": "__ッ"
         },{
             "id": 30,
-            "characterName": "あなた",
-            "dialogue": "ありがとう。まさかコタッキーが地球から指を\n鳴らして戻してくれるとは。"
+            "characterName": "コタッキー",
+            "sprite":2,
+            "background":2,
+            "dialogue": "危なかったなお前。\nあのまま宇宙にいたらどうなってたか。"
         },{
             "id": 31,
-            "characterName": "コタッキー",
-            "dialogue": "滝沢様は俺より立場が上だから戻せなかったけどな"
+            "characterName": "あなた",
+            "sprite":2,
+            "dialogue": "ありがとう。まさかコタッキーが地球から指を\n鳴らして戻してくれるとは。"
         },{
             "id": 32,
-            
-            "dialogue": "滝沢は二度と地球へは戻れなかった…。鉱物と生物の中間の生命体となり、永遠に宇宙空間をさまようのだ。そして、どうしようもないので"
+            "characterName": "コタッキー",
+            "sprite":2,
+            "dialogue": "滝沢様は俺より立場が上だから戻せなかったけどな"
         },{
             "id": 33,
-            
+            "sprite":1,
+            "background":1,
+            "dialogue": "滝沢は二度と地球へは戻れなかった…。鉱物と生物の中間の生命体となり、永遠に宇宙空間をさまようのだ。そして、どうしようもないので"
+        },{
+            "id": 34,
+            "sprite":4,
             "dialogue": "─そのうち滝沢は、考えるのをやめた。"
         }
     ]
 }
+すたーと！

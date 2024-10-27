@@ -35,4 +35,19 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Credits.unity
     guid: 4cd292d3c38639f45a399560ed6736b2
+  - enabled: 1
+    path: Assets/Scenes/TitleBug.unity
+    guid: ac09119495b762f4ea0fd3f65cdbda4d
+  - enabled: 1
+    path: Assets/Scenes/IntroBug.unity
+    guid: 38571c00a8846ab4b8b49a2a0a561a43
+  - enabled: 1
+    path: Assets/Scenes/StrongerGame.unity
+    guid: b0b8cdbb3b0e1c54d96187f9e0cf7687
+  - enabled: 1
+    path: Assets/Scenes/EndingBugLose.unity
+    guid: 63ce1f08e42430940a78da01ceda3bd7
+  - enabled: 1
+    path: Assets/Scenes/EndingBugWin.unity
+    guid: f7b562d642ad56b458896d5c89b22e25
   m_configObjects: {}
