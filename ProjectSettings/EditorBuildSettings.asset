@@ -31,7 +31,7 @@ EditorBuildSettings:
     guid: 0d25cf5a8a04898419d3fc8a802f7e1c
   - enabled: 1
     path: Assets/Scenes/EndingSpecial.unity
-    guid: 4a704174ab260ce459769b88c71138d6
+    guid: 1bf977fcbed7e0d4395b1f1aaaa6ae24
   - enabled: 1
     path: Assets/Scenes/Credits.unity
     guid: 4cd292d3c38639f45a399560ed6736b2

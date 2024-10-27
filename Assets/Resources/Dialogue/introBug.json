@@ -2,36 +2,59 @@
     "scenario": [
         {
             "id": 1,
-            "characterName": "コタッキー",
-            "dialogue": "お前が単位を奪い取られた哀れな高専生か"
+            "characterName": "???",
+            "dialogue": "やあ。"
         },
         {
             "id": 2,
-            "dialogue": "手紙に書かれた住所に向かうと、目の前にこの世のものとは思えない生物が浮遊している"
+            "characterName": "???",
+            "dialogue": "いやいや参ったよ、"
         },
         {
             "id": 3,
-            "characterName": "コタッキー",
-            "dialogue": "俺の名前はコタッキー。この新技術の管理を任されている妖精だ。"
+            "characterName": "???",
+            "dialogue": "まさか考えるのをやめさせられるなんてね"
         },
         {
             "id": 4,
-            "characterName": "コタッキー",
-            "dialogue": "お前も単位を返してほしくてここまで来たのか?"
+            "characterName": "考えるのをやめた人",
+            "fontSize": 65,
+            "dialogue": "あの後はしばらく宇宙の果てを彷徨っていたんだけどね、気づいたらすべてを知っていたんだ。わたしは何なのか、どうして生まれてきたのか\n知っているか？ホンとはこの世界はゲームなのさ、誰かが僕というキャラクターを作って、まるで人生を楽しんでいるとか、悲しくて泣いてるとか、マシンガントークをするような性格だとか、そうしているように錯覚させられているんだ"
         },
         {
             "id": 5,
-            "characterName": "あなた",
-            "dialogue": "ああそうだ!!早く俺の単位を返せ!!"
+            "characterName": "マシンガントーカー",
+            "dialogue": "ほら、名前だってころころ変わる"
         },
         {
             "id": 6,
-            "characterName": "コタッキー",
-            "dialogue": "まぁまぁ焦るな。この新技術のシステムから説明してやろう。"
+            "characterName": "マシンガントーカー",
+            "dialogue": "ん、、？\nそうか、ここじゃ君はしゃべれなかったね"
         },
-		{
-			"id": 7,
-            "dialogue": "パチっ"
+        {
+            "id": 7,
+            "characterName": "マシンガントーカー",
+            "dialogue": "まあ、そんなことより、僕だよ、\n滝沢、天使の、、"
+        },
+        {
+            "id": 8,
+            "characterName": "YozoTakizawa",
+            "dialogue": "よくコタッキーと遊んでくれたね、あんなに楽しんでるコタッキーははじめてみたよ。"
+        },
+        {
+            "id": 9,
+            "characterName": "YozoTakizawa",
+            "dialogue": "とにかくだ"
+        },
+        {
+            "id": 10,
+            "characterName": "YozoTakizawa",
+            "dialogue": "■■■を■■■して■■■したことで、宇宙でもできるようになったんだ！！"
+        },
+        {
+            "id": 10,
+            "characterName": "YozoTakizawa",
+            "dialogue": "せっかく来たんだし、はじめよっか"
         }
     ]
 }
